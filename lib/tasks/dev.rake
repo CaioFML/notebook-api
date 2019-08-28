@@ -1,9 +1,9 @@
 namespace :dev do
-  desc "Configura o ambiente de desenvolvimento"
+  desc 'Configura o ambiente de desenvolvimento'
   task setup: :environment do
-    puts "Cadastrando os contatos..."
+    puts 'Cadastrando os contatos...'
 
-    100.times do |i|
+    100.times do
       Contact.create!(
         name: Faker::Name.name,
         email: Faker::Internet.email,
@@ -11,6 +11,6 @@ namespace :dev do
       )
     end
 
-    puts "Contatos cadastrados com sucesso!"
+    puts 'Contatos cadastrados com sucesso!'
   end
 end
