@@ -6,4 +6,6 @@ class Contact < ApplicationRecord
   def as_json(options={})
     super(methods: :author, root: true)
   end
+
+  belongs_to :kind
 end

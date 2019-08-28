@@ -843,3 +843,2103 @@ Processing by ContactsController#index as */*
 Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.3ms)
 
 
+  [1m[35m (27.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828193911)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kind_id" bigint[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (40.4ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (143.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (115.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (499.6ms)[0m  [1m[35mCREATE DATABASE "notebook-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (233.3ms)[0m  [1m[35mCREATE DATABASE "notebook-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContacts (20190828143547)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying, "email" character varying, "birthdate" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828143547_create_contacts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828143547"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828193911)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kind_id" bigint[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828193911)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kind_id" bigint[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828193911)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kinds_id" bigint[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kinds_id" ON "contacts"  ("kinds_id")[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c046c5567b"
+FOREIGN KEY ("kinds_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "notebook-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "notebook-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-28 19:45:54.235903"], ["updated_at", "2019-08-28 19:45:54.235903"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (108.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (114.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (230.6ms)[0m  [1m[35mCREATE DATABASE "notebook-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (232.6ms)[0m  [1m[35mCREATE DATABASE "notebook-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContacts (20190828143547)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying, "email" character varying, "birthdate" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828143547_create_contacts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828143547"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828193911)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kinds_id" bigint[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kinds_id" ON "contacts"  ("kinds_id")[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c046c5567b"
+FOREIGN KEY ("kinds_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828193911_add_kind_to_contact.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-28 19:47:00.179956"], ["updated_at", "2019-08-28 19:47:00.179956"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (116.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (117.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (211.9ms)[0m  [1m[35mCREATE DATABASE "notebook-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (231.3ms)[0m  [1m[35mCREATE DATABASE "notebook-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContacts (20190828143547)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying, "email" character varying, "birthdate" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828143547_create_contacts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828143547"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828194804)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kind_id" bigint[0m
+  ↳ db/migrate/20190828194804_add_kind_to_contact.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  ↳ db/migrate/20190828194804_add_kind_to_contact.rb:3
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828194804_add_kind_to_contact.rb:3
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20190828194832)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20190828194832)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20190828195257)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" bigserial primary key, "description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828195257_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195257"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828195305)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kind_id" bigint[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195305"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-28 19:53:09.897144"], ["updated_at", "2019-08-28 19:53:09.897144"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (108.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (112.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (220.7ms)[0m  [1m[35mCREATE DATABASE "notebook-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (214.5ms)[0m  [1m[35mCREATE DATABASE "notebook-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContacts (20190828143547)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying, "email" character varying, "birthdate" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828143547_create_contacts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828143547"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20190828195257)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" bigserial primary key, "description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828195257_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195257"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828195305)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kind_id" bigint[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195305"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-28 19:56:46.735689"], ["updated_at", "2019-08-28 19:56:46.735689"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (118.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (119.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (231.4ms)[0m  [1m[35mCREATE DATABASE "notebook-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (234.4ms)[0m  [1m[35mCREATE DATABASE "notebook-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContacts (20190828143547)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying, "email" character varying, "birthdate" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828143547_create_contacts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828143547"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20190828195257)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" bigserial primary key, "description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828195257_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195257"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828195305)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kind_id" bigint[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195305"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-28 19:57:27.598407"], ["updated_at", "2019-08-28 19:57:27.598407"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ernestina Ortiz"], ["email", "abraham.bayer@schaefer.com"], ["birthdate", "1977-04-22"], ["created_at", "2019-08-28 19:57:27.769438"], ["updated_at", "2019-08-28 19:57:27.769438"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Xiao Goyette DVM"], ["email", "star_cole@prohaska.biz"], ["birthdate", "1961-10-11"], ["created_at", "2019-08-28 19:57:27.774317"], ["updated_at", "2019-08-28 19:57:27.774317"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Peter Boyer"], ["email", "rupert@schimmelgaylord.info"], ["birthdate", "1968-08-22"], ["created_at", "2019-08-28 19:57:27.775509"], ["updated_at", "2019-08-28 19:57:27.775509"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mickey Ruecker"], ["email", "lindsay.keebler@ebert.org"], ["birthdate", "1966-02-06"], ["created_at", "2019-08-28 19:57:27.776493"], ["updated_at", "2019-08-28 19:57:27.776493"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Shala Hayes"], ["email", "dylan@nicolas.org"], ["birthdate", "1987-10-23"], ["created_at", "2019-08-28 19:57:27.777526"], ["updated_at", "2019-08-28 19:57:27.777526"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Monserrate Hodkiewicz"], ["email", "ruben_hackett@bins.com"], ["birthdate", "1974-11-26"], ["created_at", "2019-08-28 19:57:27.778540"], ["updated_at", "2019-08-28 19:57:27.778540"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Ray Corkery"], ["email", "silvia@maggio.biz"], ["birthdate", "1968-08-07"], ["created_at", "2019-08-28 19:57:27.779563"], ["updated_at", "2019-08-28 19:57:27.779563"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Weston Crooks"], ["email", "barbie@olson.biz"], ["birthdate", "1989-07-19"], ["created_at", "2019-08-28 19:57:27.780571"], ["updated_at", "2019-08-28 19:57:27.780571"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Miss Bethany Ratke"], ["email", "fransisca@runolfontillman.net"], ["birthdate", "1999-08-24"], ["created_at", "2019-08-28 19:57:27.781582"], ["updated_at", "2019-08-28 19:57:27.781582"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Logan Gulgowski"], ["email", "marilynn.daugherty@stanton.net"], ["birthdate", "1972-07-12"], ["created_at", "2019-08-28 19:57:27.782603"], ["updated_at", "2019-08-28 19:57:27.782603"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Daryl Koepp DVM"], ["email", "angelo@mohrfarrell.info"], ["birthdate", "1984-02-17"], ["created_at", "2019-08-28 19:57:27.783563"], ["updated_at", "2019-08-28 19:57:27.783563"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alphonse Nader"], ["email", "marcelo@jakubowski.net"], ["birthdate", "1963-04-30"], ["created_at", "2019-08-28 19:57:27.784482"], ["updated_at", "2019-08-28 19:57:27.784482"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jaymie Collins"], ["email", "orpha@macejkovic.biz"], ["birthdate", "1994-05-15"], ["created_at", "2019-08-28 19:57:27.785382"], ["updated_at", "2019-08-28 19:57:27.785382"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cherry White"], ["email", "danita@watsica.net"], ["birthdate", "1969-12-13"], ["created_at", "2019-08-28 19:57:27.786846"], ["updated_at", "2019-08-28 19:57:27.786846"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Richard Kuphal"], ["email", "abdul_kilback@sipes.biz"], ["birthdate", "1989-08-31"], ["created_at", "2019-08-28 19:57:27.791069"], ["updated_at", "2019-08-28 19:57:27.791069"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Petrina O'Connell"], ["email", "penny@roberts.co"], ["birthdate", "1986-06-05"], ["created_at", "2019-08-28 19:57:27.792585"], ["updated_at", "2019-08-28 19:57:27.792585"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brandee West"], ["email", "carol@jaskolski.name"], ["birthdate", "1986-08-29"], ["created_at", "2019-08-28 19:57:27.793806"], ["updated_at", "2019-08-28 19:57:27.793806"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Helga Erdman"], ["email", "phil@cristturner.co"], ["birthdate", "1976-04-08"], ["created_at", "2019-08-28 19:57:27.796060"], ["updated_at", "2019-08-28 19:57:27.796060"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Miles Bartell V"], ["email", "alida.padberg@kilbackferry.org"], ["birthdate", "1972-06-11"], ["created_at", "2019-08-28 19:57:27.797419"], ["updated_at", "2019-08-28 19:57:27.797419"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wanetta Denesik"], ["email", "micki_crist@morar.biz"], ["birthdate", "1990-11-18"], ["created_at", "2019-08-28 19:57:27.798691"], ["updated_at", "2019-08-28 19:57:27.798691"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Samual Nienow"], ["email", "arden_auer@okeefe.biz"], ["birthdate", "1958-09-30"], ["created_at", "2019-08-28 19:57:27.799770"], ["updated_at", "2019-08-28 19:57:27.799770"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kurt Lebsack"], ["email", "herbert@cummerata.net"], ["birthdate", "1956-03-04"], ["created_at", "2019-08-28 19:57:27.800800"], ["updated_at", "2019-08-28 19:57:27.800800"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ali Johnson"], ["email", "dorathy@kuhlman.info"], ["birthdate", "2001-04-11"], ["created_at", "2019-08-28 19:57:27.801795"], ["updated_at", "2019-08-28 19:57:27.801795"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mai Hamill"], ["email", "apryl@dooley.name"], ["birthdate", "1969-11-12"], ["created_at", "2019-08-28 19:57:27.802880"], ["updated_at", "2019-08-28 19:57:27.802880"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lorrine Kirlin"], ["email", "charles@dietrich.name"], ["birthdate", "1970-01-28"], ["created_at", "2019-08-28 19:57:27.805850"], ["updated_at", "2019-08-28 19:57:27.805850"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Numbers Shanahan"], ["email", "chad_kiehn@hammes.biz"], ["birthdate", "1987-07-08"], ["created_at", "2019-08-28 19:57:27.808039"], ["updated_at", "2019-08-28 19:57:27.808039"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gil Rolfson"], ["email", "sherryl@koeppvon.info"], ["birthdate", "1963-04-01"], ["created_at", "2019-08-28 19:57:27.809837"], ["updated_at", "2019-08-28 19:57:27.809837"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arthur Wisozk"], ["email", "joe@stammmonahan.net"], ["birthdate", "1999-07-15"], ["created_at", "2019-08-28 19:57:27.811460"], ["updated_at", "2019-08-28 19:57:27.811460"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Merrie Russel"], ["email", "arturo@heller.com"], ["birthdate", "1998-08-25"], ["created_at", "2019-08-28 19:57:27.812551"], ["updated_at", "2019-08-28 19:57:27.812551"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Demarcus Simonis"], ["email", "ruthie@wisoky.info"], ["birthdate", "1966-03-25"], ["created_at", "2019-08-28 19:57:27.813585"], ["updated_at", "2019-08-28 19:57:27.813585"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arden Dooley"], ["email", "larry_donnelly@gottlieb.net"], ["birthdate", "1954-11-10"], ["created_at", "2019-08-28 19:57:27.814641"], ["updated_at", "2019-08-28 19:57:27.814641"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Santo Marvin DVM"], ["email", "calvin.fadel@davis.org"], ["birthdate", "1977-08-11"], ["created_at", "2019-08-28 19:57:27.815730"], ["updated_at", "2019-08-28 19:57:27.815730"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tyree Tromp"], ["email", "noe.wintheiser@langworthblock.name"], ["birthdate", "1980-03-19"], ["created_at", "2019-08-28 19:57:27.816804"], ["updated_at", "2019-08-28 19:57:27.816804"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Thaddeus Cronin DDS"], ["email", "kacy.walsh@wuckertroberts.io"], ["birthdate", "1992-04-10"], ["created_at", "2019-08-28 19:57:27.817883"], ["updated_at", "2019-08-28 19:57:27.817883"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Antoine Gerlach"], ["email", "george@erdmanschuster.net"], ["birthdate", "1978-04-05"], ["created_at", "2019-08-28 19:57:27.819178"], ["updated_at", "2019-08-28 19:57:27.819178"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chong Bartell"], ["email", "garret.corkery@gulgowski.io"], ["birthdate", "1968-01-08"], ["created_at", "2019-08-28 19:57:27.826290"], ["updated_at", "2019-08-28 19:57:27.826290"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arlen Heidenreich"], ["email", "iac@witting.biz"], ["birthdate", "1976-11-26"], ["created_at", "2019-08-28 19:57:27.828555"], ["updated_at", "2019-08-28 19:57:27.828555"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kevin O'Hara"], ["email", "felipe.swaniawski@muller.net"], ["birthdate", "1955-11-25"], ["created_at", "2019-08-28 19:57:27.830186"], ["updated_at", "2019-08-28 19:57:27.830186"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Colin Botsford"], ["email", "jude@moen.net"], ["birthdate", "1958-02-07"], ["created_at", "2019-08-28 19:57:27.831834"], ["updated_at", "2019-08-28 19:57:27.831834"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeremy Nicolas"], ["email", "marnie@sporerharris.name"], ["birthdate", "1978-02-15"], ["created_at", "2019-08-28 19:57:27.832915"], ["updated_at", "2019-08-28 19:57:27.832915"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Charley Klocko"], ["email", "tilda@quitzon.org"], ["birthdate", "1976-01-04"], ["created_at", "2019-08-28 19:57:27.833878"], ["updated_at", "2019-08-28 19:57:27.833878"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Neal Marks"], ["email", "alena@crist.info"], ["birthdate", "1986-08-01"], ["created_at", "2019-08-28 19:57:27.834928"], ["updated_at", "2019-08-28 19:57:27.834928"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Willow Von DDS"], ["email", "roseanna.hudson@lang.com"], ["birthdate", "1963-12-08"], ["created_at", "2019-08-28 19:57:27.835870"], ["updated_at", "2019-08-28 19:57:27.835870"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (2.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chaya Waters DVM"], ["email", "mary.botsford@conroykovacek.info"], ["birthdate", "1956-09-09"], ["created_at", "2019-08-28 19:57:27.836883"], ["updated_at", "2019-08-28 19:57:27.836883"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Britany Graham"], ["email", "maude@walker.biz"], ["birthdate", "1995-04-22"], ["created_at", "2019-08-28 19:57:27.845353"], ["updated_at", "2019-08-28 19:57:27.845353"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gerardo Rice II"], ["email", "constance@mcclurejakubowski.biz"], ["birthdate", "1990-12-23"], ["created_at", "2019-08-28 19:57:27.847718"], ["updated_at", "2019-08-28 19:57:27.847718"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Heller"], ["email", "marlin.kunze@kerlukeheel.com"], ["birthdate", "1955-03-09"], ["created_at", "2019-08-28 19:57:27.849760"], ["updated_at", "2019-08-28 19:57:27.849760"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tanika Hermann"], ["email", "billie_legros@williamson.name"], ["birthdate", "1978-08-20"], ["created_at", "2019-08-28 19:57:27.851019"], ["updated_at", "2019-08-28 19:57:27.851019"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Danny Heathcote Jr."], ["email", "ray_weber@pfeffer.info"], ["birthdate", "1976-09-26"], ["created_at", "2019-08-28 19:57:27.852159"], ["updated_at", "2019-08-28 19:57:27.852159"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Ninfa Mohr"], ["email", "alida.wyman@fadel.com"], ["birthdate", "1979-03-03"], ["created_at", "2019-08-28 19:57:27.853188"], ["updated_at", "2019-08-28 19:57:27.853188"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Idell Koss"], ["email", "abel_hickle@ko.org"], ["birthdate", "1956-11-20"], ["created_at", "2019-08-28 19:57:27.856946"], ["updated_at", "2019-08-28 19:57:27.856946"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fred Pagac"], ["email", "kanesha_rosenbaum@shanahan.biz"], ["birthdate", "1996-02-04"], ["created_at", "2019-08-28 19:57:27.858830"], ["updated_at", "2019-08-28 19:57:27.858830"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Shirlene Senger"], ["email", "valentin@kutchanderson.info"], ["birthdate", "1976-11-06"], ["created_at", "2019-08-28 19:57:27.860980"], ["updated_at", "2019-08-28 19:57:27.860980"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Willie Kovacek"], ["email", "marth@larkinwalsh.io"], ["birthdate", "1970-05-29"], ["created_at", "2019-08-28 19:57:27.862276"], ["updated_at", "2019-08-28 19:57:27.862276"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gerda Nicolas"], ["email", "palmer.sawayn@streich.org"], ["birthdate", "1979-02-18"], ["created_at", "2019-08-28 19:57:27.863307"], ["updated_at", "2019-08-28 19:57:27.863307"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lore Schmeler"], ["email", "earl.hansen@lubowitzlowe.net"], ["birthdate", "1954-09-08"], ["created_at", "2019-08-28 19:57:27.864307"], ["updated_at", "2019-08-28 19:57:27.864307"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Geoffrey Legros"], ["email", "hung@bergnaum.com"], ["birthdate", "1963-07-28"], ["created_at", "2019-08-28 19:57:27.865325"], ["updated_at", "2019-08-28 19:57:27.865325"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Erica Kshlerin"], ["email", "milo.osinski@weimann.info"], ["birthdate", "1955-01-02"], ["created_at", "2019-08-28 19:57:27.866439"], ["updated_at", "2019-08-28 19:57:27.866439"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Billy Harris"], ["email", "dagny@cummerata.io"], ["birthdate", "1999-03-18"], ["created_at", "2019-08-28 19:57:27.867485"], ["updated_at", "2019-08-28 19:57:27.867485"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mana Witting"], ["email", "marquitta@heidenreich.io"], ["birthdate", "1997-09-10"], ["created_at", "2019-08-28 19:57:27.868879"], ["updated_at", "2019-08-28 19:57:27.868879"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (1.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Riva O'Connell"], ["email", "mellia@sipes.co"], ["birthdate", "1970-04-13"], ["created_at", "2019-08-28 19:57:27.872970"], ["updated_at", "2019-08-28 19:57:27.872970"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Elayne Friesen"], ["email", "elane@manteschaden.com"], ["birthdate", "1971-11-28"], ["created_at", "2019-08-28 19:57:27.877873"], ["updated_at", "2019-08-28 19:57:27.877873"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lakia Streich IV"], ["email", "erich_crist@mitchell.com"], ["birthdate", "1969-01-15"], ["created_at", "2019-08-28 19:57:27.879542"], ["updated_at", "2019-08-28 19:57:27.879542"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Laquita Cruickshank"], ["email", "lonna.kautzer@bailey.co"], ["birthdate", "2000-07-07"], ["created_at", "2019-08-28 19:57:27.880984"], ["updated_at", "2019-08-28 19:57:27.880984"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jae Kovacek III"], ["email", "duane@hoppe.co"], ["birthdate", "1961-07-08"], ["created_at", "2019-08-28 19:57:27.882383"], ["updated_at", "2019-08-28 19:57:27.882383"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Isaias Schaefer"], ["email", "hulda@cole.net"], ["birthdate", "1984-12-12"], ["created_at", "2019-08-28 19:57:27.883744"], ["updated_at", "2019-08-28 19:57:27.883744"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dr. Adella Lubowitz"], ["email", "dahlia_yundt@schiller.net"], ["birthdate", "1989-08-28"], ["created_at", "2019-08-28 19:57:27.885177"], ["updated_at", "2019-08-28 19:57:27.885177"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Josef Vandervort"], ["email", "ruben_swift@cristbednar.net"], ["birthdate", "1966-11-11"], ["created_at", "2019-08-28 19:57:27.886604"], ["updated_at", "2019-08-28 19:57:27.886604"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.8ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Ben Borer"], ["email", "johnathan.beier@collins.com"], ["birthdate", "1969-02-21"], ["created_at", "2019-08-28 19:57:27.889622"], ["updated_at", "2019-08-28 19:57:27.889622"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ethan Quitzon"], ["email", "giovanna_torp@schuster.name"], ["birthdate", "1994-08-24"], ["created_at", "2019-08-28 19:57:27.892843"], ["updated_at", "2019-08-28 19:57:27.892843"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Giuseppe Frami DDS"], ["email", "lucrecia_cummerata@schowaltermacejkovic.com"], ["birthdate", "1999-11-10"], ["created_at", "2019-08-28 19:57:27.894496"], ["updated_at", "2019-08-28 19:57:27.894496"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Karole Franecki"], ["email", "jewell@greenholt.co"], ["birthdate", "1970-07-02"], ["created_at", "2019-08-28 19:57:27.896566"], ["updated_at", "2019-08-28 19:57:27.896566"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jamel Bins"], ["email", "todd@ernserquitzon.biz"], ["birthdate", "1971-03-02"], ["created_at", "2019-08-28 19:57:27.897782"], ["updated_at", "2019-08-28 19:57:27.897782"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Miss Odis Stroman"], ["email", "daniel_farrell@sengerwilkinson.co"], ["birthdate", "1983-06-13"], ["created_at", "2019-08-28 19:57:27.898791"], ["updated_at", "2019-08-28 19:57:27.898791"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Riva Schmidt"], ["email", "virgie@bahringer.name"], ["birthdate", "1998-10-29"], ["created_at", "2019-08-28 19:57:27.899765"], ["updated_at", "2019-08-28 19:57:27.899765"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Linette Kris"], ["email", "oscar@swift.name"], ["birthdate", "1999-12-14"], ["created_at", "2019-08-28 19:57:27.900685"], ["updated_at", "2019-08-28 19:57:27.900685"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Karon Bogisich"], ["email", "johnie_rowe@hayes.net"], ["birthdate", "1996-09-20"], ["created_at", "2019-08-28 19:57:27.901630"], ["updated_at", "2019-08-28 19:57:27.901630"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Carlton Kling"], ["email", "roger@willms.info"], ["birthdate", "1985-04-25"], ["created_at", "2019-08-28 19:57:27.902586"], ["updated_at", "2019-08-28 19:57:27.902586"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (1.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Abram Sipes"], ["email", "alise@kuphal.co"], ["birthdate", "1961-05-10"], ["created_at", "2019-08-28 19:57:27.903833"], ["updated_at", "2019-08-28 19:57:27.903833"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rodolfo Lockman DVM"], ["email", "odell_baumbach@konopelski.co"], ["birthdate", "1995-08-25"], ["created_at", "2019-08-28 19:57:27.908495"], ["updated_at", "2019-08-28 19:57:27.908495"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Donya Reichert"], ["email", "glendora.corkery@murphy.biz"], ["birthdate", "1979-04-17"], ["created_at", "2019-08-28 19:57:27.909677"], ["updated_at", "2019-08-28 19:57:27.909677"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Retha Lemke"], ["email", "stacey_mohr@bednar.biz"], ["birthdate", "1957-11-02"], ["created_at", "2019-08-28 19:57:27.910740"], ["updated_at", "2019-08-28 19:57:27.910740"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Stanford Howell"], ["email", "athena_durgan@koepphand.name"], ["birthdate", "2000-01-17"], ["created_at", "2019-08-28 19:57:27.911899"], ["updated_at", "2019-08-28 19:57:27.911899"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Marcelina Emard"], ["email", "nakesha.stiedemann@sporer.name"], ["birthdate", "1964-10-31"], ["created_at", "2019-08-28 19:57:27.912951"], ["updated_at", "2019-08-28 19:57:27.912951"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alexis Watsica"], ["email", "christen_krajcik@jacobsgulgowski.org"], ["birthdate", "1970-12-08"], ["created_at", "2019-08-28 19:57:27.913930"], ["updated_at", "2019-08-28 19:57:27.913930"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brice Dickens"], ["email", "georgianna@brekke.name"], ["birthdate", "1962-11-12"], ["created_at", "2019-08-28 19:57:27.914890"], ["updated_at", "2019-08-28 19:57:27.914890"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Yong Schmidt DVM"], ["email", "julia@grimes.net"], ["birthdate", "1966-12-30"], ["created_at", "2019-08-28 19:57:27.915909"], ["updated_at", "2019-08-28 19:57:27.915909"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Erline Braun"], ["email", "kenny@lebsack.biz"], ["birthdate", "2000-09-16"], ["created_at", "2019-08-28 19:57:27.916908"], ["updated_at", "2019-08-28 19:57:27.916908"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kris Batz"], ["email", "lesley_davis@huel.net"], ["birthdate", "2001-05-25"], ["created_at", "2019-08-28 19:57:27.917887"], ["updated_at", "2019-08-28 19:57:27.917887"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Russell Paucek"], ["email", "nancie.marks@cole.co"], ["birthdate", "1966-05-17"], ["created_at", "2019-08-28 19:57:27.918996"], ["updated_at", "2019-08-28 19:57:27.918996"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (1.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Antonina Hayes II"], ["email", "phoebe@lockman.com"], ["birthdate", "1980-09-07"], ["created_at", "2019-08-28 19:57:27.921193"], ["updated_at", "2019-08-28 19:57:27.921193"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cortez Hammes"], ["email", "tony@hoppe.com"], ["birthdate", "1985-03-14"], ["created_at", "2019-08-28 19:57:27.925497"], ["updated_at", "2019-08-28 19:57:27.925497"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Paris Stark"], ["email", "malcom.doyle@nolanprohaska.io"], ["birthdate", "1979-01-29"], ["created_at", "2019-08-28 19:57:27.927276"], ["updated_at", "2019-08-28 19:57:27.927276"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jacques Fahey"], ["email", "efren@treutel.org"], ["birthdate", "1986-08-18"], ["created_at", "2019-08-28 19:57:27.929524"], ["updated_at", "2019-08-28 19:57:27.929524"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dr. Weldon Price"], ["email", "micah@binspouros.info"], ["birthdate", "1990-01-17"], ["created_at", "2019-08-28 19:57:27.930910"], ["updated_at", "2019-08-28 19:57:27.930910"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Art Heller"], ["email", "duane.klocko@white.name"], ["birthdate", "1996-07-24"], ["created_at", "2019-08-28 19:57:27.932054"], ["updated_at", "2019-08-28 19:57:27.932054"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Edwin Krajcik"], ["email", "vivian@gutkowski.org"], ["birthdate", "1971-02-27"], ["created_at", "2019-08-28 19:57:27.933001"], ["updated_at", "2019-08-28 19:57:27.933001"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Moshe Kulas"], ["email", "micheal@cummerata.biz"], ["birthdate", "1957-09-06"], ["created_at", "2019-08-28 19:57:27.933949"], ["updated_at", "2019-08-28 19:57:27.933949"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ms. Garry Zieme"], ["email", "willie.powlowski@luettgennitzsche.info"], ["birthdate", "1991-10-23"], ["created_at", "2019-08-28 19:57:27.934913"], ["updated_at", "2019-08-28 19:57:27.934913"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lon Flatley"], ["email", "alec.schinner@dietrichlubowitz.net"], ["birthdate", "1970-01-14"], ["created_at", "2019-08-28 19:57:27.936029"], ["updated_at", "2019-08-28 19:57:27.936029"]]
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:21
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Amigo"], ["created_at", "2019-08-28 19:57:27.944426"], ["updated_at", "2019-08-28 19:57:27.944426"]]
+  ↳ lib/tasks/dev.rake:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:21
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Comercial"], ["created_at", "2019-08-28 19:57:27.946372"], ["updated_at", "2019-08-28 19:57:27.946372"]]
+  ↳ lib/tasks/dev.rake:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:21
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Conhecido"], ["created_at", "2019-08-28 19:57:27.948686"], ["updated_at", "2019-08-28 19:57:27.948686"]]
+  ↳ lib/tasks/dev.rake:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:21
+Started GET "/kinds" for ::1 at 2019-08-28 16:58:38 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KindsController#index as */*
+  [1m[36mKind Load (1.5ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:8
+Completed 200 OK in 40ms (Views: 19.4ms | ActiveRecord: 18.5ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (116.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (116.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (211.1ms)[0m  [1m[35mCREATE DATABASE "notebook-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (230.7ms)[0m  [1m[35mCREATE DATABASE "notebook-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContacts (20190828143547)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying, "email" character varying, "birthdate" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828143547_create_contacts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828143547"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20190828195257)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" bigserial primary key, "description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828195257_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195257"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828195305)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kind_id" bigint[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195305"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-28 20:00:10.126604"], ["updated_at", "2019-08-28 20:00:10.126604"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[36mKind Create (0.4ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Amigo"], ["created_at", "2019-08-28 20:00:10.176416"], ["updated_at", "2019-08-28 20:00:10.176416"]]
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[36mKind Create (0.3ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Comercial"], ["created_at", "2019-08-28 20:00:10.178371"], ["updated_at", "2019-08-28 20:00:10.178371"]]
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[36mKind Create (0.2ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Conhecido"], ["created_at", "2019-08-28 20:00:10.179826"], ["updated_at", "2019-08-28 20:00:10.179826"]]
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (108.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (114.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (230.9ms)[0m  [1m[35mCREATE DATABASE "notebook-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (230.8ms)[0m  [1m[35mCREATE DATABASE "notebook-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateContacts (20190828143547)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying, "email" character varying, "birthdate" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828143547_create_contacts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828143547"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateKinds (20190828195257)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" bigserial primary key, "description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190828195257_create_kinds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195257"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddKindToContact (20190828195305)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "contacts" ADD "kind_id" bigint[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  ↳ db/migrate/20190828195305_add_kind_to_contact.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190828195305"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-28 20:00:58.878709"], ["updated_at", "2019-08-28 20:00:58.878709"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492997334603298880)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[36mKind Create (0.6ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Amigo"], ["created_at", "2019-08-28 20:00:58.927851"], ["updated_at", "2019-08-28 20:00:58.927851"]]
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[36mKind Create (0.5ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Comercial"], ["created_at", "2019-08-28 20:00:58.930230"], ["updated_at", "2019-08-28 20:00:58.930230"]]
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[36mKind Create (1.3ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Conhecido"], ["created_at", "2019-08-28 20:00:58.932657"], ["updated_at", "2019-08-28 20:00:58.932657"]]
+  ↳ lib/tasks/dev.rake:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:10
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sharika Larson"], ["email", "harry@aufderharmohr.co"], ["birthdate", "1961-02-05"], ["created_at", "2019-08-28 20:00:59.025096"], ["updated_at", "2019-08-28 20:00:59.025096"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Miss Shawn Walsh"], ["email", "gabriel_dickinson@toykuhic.biz"], ["birthdate", "1973-09-26"], ["created_at", "2019-08-28 20:00:59.027230"], ["updated_at", "2019-08-28 20:00:59.027230"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Maren O'Conner Sr."], ["email", "horace@rutherford.com"], ["birthdate", "1956-09-06"], ["created_at", "2019-08-28 20:00:59.028720"], ["updated_at", "2019-08-28 20:00:59.028720"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Pedro Auer III"], ["email", "omar@gerlach.biz"], ["birthdate", "1995-11-03"], ["created_at", "2019-08-28 20:00:59.030007"], ["updated_at", "2019-08-28 20:00:59.030007"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cher Walker"], ["email", "mandy@cummeratahudson.org"], ["birthdate", "1974-03-23"], ["created_at", "2019-08-28 20:00:59.031272"], ["updated_at", "2019-08-28 20:00:59.031272"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr. Micha McGlynn"], ["email", "ora.swaniawski@wyman.org"], ["birthdate", "1993-11-26"], ["created_at", "2019-08-28 20:00:59.032586"], ["updated_at", "2019-08-28 20:00:59.032586"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jon Kerluke"], ["email", "annamae_wyman@oconnellboyle.org"], ["birthdate", "1999-05-11"], ["created_at", "2019-08-28 20:00:59.033867"], ["updated_at", "2019-08-28 20:00:59.033867"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Epifania Conroy"], ["email", "reid.wyman@turner.net"], ["birthdate", "1961-06-01"], ["created_at", "2019-08-28 20:00:59.035147"], ["updated_at", "2019-08-28 20:00:59.035147"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Novella Boyle"], ["email", "anya@ernsernikolaus.biz"], ["birthdate", "1966-08-18"], ["created_at", "2019-08-28 20:00:59.036408"], ["updated_at", "2019-08-28 20:00:59.036408"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ione Doyle I"], ["email", "homer@lubowitzhodkiewicz.name"], ["birthdate", "1973-09-12"], ["created_at", "2019-08-28 20:00:59.037887"], ["updated_at", "2019-08-28 20:00:59.037887"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Corey Corwin"], ["email", "roberto@johnston.co"], ["birthdate", "1999-02-12"], ["created_at", "2019-08-28 20:00:59.039281"], ["updated_at", "2019-08-28 20:00:59.039281"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lyndon Bruen"], ["email", "roseanna@kiehn.name"], ["birthdate", "1980-01-29"], ["created_at", "2019-08-28 20:00:59.040593"], ["updated_at", "2019-08-28 20:00:59.040593"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Miss Liz Hills"], ["email", "pearlie@lefflerheller.co"], ["birthdate", "1988-03-30"], ["created_at", "2019-08-28 20:00:59.041890"], ["updated_at", "2019-08-28 20:00:59.041890"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bart Bergnaum"], ["email", "joey.barton@rath.org"], ["birthdate", "1972-04-26"], ["created_at", "2019-08-28 20:00:59.043164"], ["updated_at", "2019-08-28 20:00:59.043164"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Raymon Frami"], ["email", "elly_auer@bergstrom.org"], ["birthdate", "1975-01-05"], ["created_at", "2019-08-28 20:00:59.044407"], ["updated_at", "2019-08-28 20:00:59.044407"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mr. Cecilia Feil"], ["email", "erich.tromp@kleinvandervort.biz"], ["birthdate", "1997-07-02"], ["created_at", "2019-08-28 20:00:59.045648"], ["updated_at", "2019-08-28 20:00:59.045648"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Percy Stamm PhD"], ["email", "vertie@blanda.name"], ["birthdate", "1996-05-15"], ["created_at", "2019-08-28 20:00:59.046909"], ["updated_at", "2019-08-28 20:00:59.046909"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Krystle Brekke"], ["email", "yaeko@mann.biz"], ["birthdate", "1978-03-23"], ["created_at", "2019-08-28 20:00:59.048172"], ["updated_at", "2019-08-28 20:00:59.048172"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Monte Fisher"], ["email", "pamela@brownleannon.co"], ["birthdate", "1966-09-04"], ["created_at", "2019-08-28 20:00:59.049407"], ["updated_at", "2019-08-28 20:00:59.049407"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Venus Volkman"], ["email", "kendrick.brakus@schmitt.name"], ["birthdate", "1973-02-22"], ["created_at", "2019-08-28 20:00:59.050703"], ["updated_at", "2019-08-28 20:00:59.050703"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Buster Windler"], ["email", "lucas.kilback@little.org"], ["birthdate", "1965-10-14"], ["created_at", "2019-08-28 20:00:59.051948"], ["updated_at", "2019-08-28 20:00:59.051948"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr. Laine Leuschke"], ["email", "derrick@stehr.org"], ["birthdate", "1989-05-31"], ["created_at", "2019-08-28 20:00:59.053217"], ["updated_at", "2019-08-28 20:00:59.053217"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ms. Tanner Ward"], ["email", "oda.walsh@luettgen.info"], ["birthdate", "1974-02-20"], ["created_at", "2019-08-28 20:00:59.054590"], ["updated_at", "2019-08-28 20:00:59.054590"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Miss Kortney Hagenes"], ["email", "bobbie.walker@lemke.name"], ["birthdate", "1964-09-05"], ["created_at", "2019-08-28 20:00:59.055944"], ["updated_at", "2019-08-28 20:00:59.055944"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tracy Wehner"], ["email", "tasia@wuckertcartwright.org"], ["birthdate", "1955-07-16"], ["created_at", "2019-08-28 20:00:59.057240"], ["updated_at", "2019-08-28 20:00:59.057240"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sherley Grant"], ["email", "coralie@eberternser.org"], ["birthdate", "1967-11-19"], ["created_at", "2019-08-28 20:00:59.058550"], ["updated_at", "2019-08-28 20:00:59.058550"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mauro Ruecker"], ["email", "dannette@schamberger.biz"], ["birthdate", "1973-02-11"], ["created_at", "2019-08-28 20:00:59.059850"], ["updated_at", "2019-08-28 20:00:59.059850"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jake Collins V"], ["email", "cristopher.sporer@reinger.com"], ["birthdate", "1971-03-24"], ["created_at", "2019-08-28 20:00:59.061143"], ["updated_at", "2019-08-28 20:00:59.061143"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Robert Runolfsson PhD"], ["email", "ludivina@denesik.net"], ["birthdate", "1984-02-24"], ["created_at", "2019-08-28 20:00:59.062473"], ["updated_at", "2019-08-28 20:00:59.062473"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gil Collier"], ["email", "katrina@murray.co"], ["birthdate", "1963-02-14"], ["created_at", "2019-08-28 20:00:59.063769"], ["updated_at", "2019-08-28 20:00:59.063769"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dalton Wunsch MD"], ["email", "daren.cummings@nikolaus.info"], ["birthdate", "1988-07-15"], ["created_at", "2019-08-28 20:00:59.065068"], ["updated_at", "2019-08-28 20:00:59.065068"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cristopher Strosin"], ["email", "samual.goyette@maggioohara.io"], ["birthdate", "1955-03-09"], ["created_at", "2019-08-28 20:00:59.066623"], ["updated_at", "2019-08-28 20:00:59.066623"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Maia Lubowitz I"], ["email", "eli_blick@ondrickaokeefe.info"], ["birthdate", "1978-09-01"], ["created_at", "2019-08-28 20:00:59.068318"], ["updated_at", "2019-08-28 20:00:59.068318"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Reta Dare"], ["email", "antonina_little@hickle.net"], ["birthdate", "1979-08-08"], ["created_at", "2019-08-28 20:00:59.069738"], ["updated_at", "2019-08-28 20:00:59.069738"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Magaret Kris"], ["email", "rob.olson@daughertydibbert.name"], ["birthdate", "1994-10-10"], ["created_at", "2019-08-28 20:00:59.071182"], ["updated_at", "2019-08-28 20:00:59.071182"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Consuela Lebsack"], ["email", "valentin.waelchi@millergrady.name"], ["birthdate", "1965-06-15"], ["created_at", "2019-08-28 20:00:59.072524"], ["updated_at", "2019-08-28 20:00:59.072524"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rufus Conroy"], ["email", "loida@cormier.info"], ["birthdate", "1972-05-29"], ["created_at", "2019-08-28 20:00:59.073826"], ["updated_at", "2019-08-28 20:00:59.073826"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kathi Haley V"], ["email", "melba@sporer.net"], ["birthdate", "1998-05-15"], ["created_at", "2019-08-28 20:00:59.075140"], ["updated_at", "2019-08-28 20:00:59.075140"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Juliet Kuphal"], ["email", "lemuel.johnson@dooley.biz"], ["birthdate", "1995-03-20"], ["created_at", "2019-08-28 20:00:59.076425"], ["updated_at", "2019-08-28 20:00:59.076425"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Morton Balistreri"], ["email", "grady@krajcikbednar.name"], ["birthdate", "1997-01-28"], ["created_at", "2019-08-28 20:00:59.077721"], ["updated_at", "2019-08-28 20:00:59.077721"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Christopher Kling"], ["email", "timothy@gottlieb.net"], ["birthdate", "1972-08-10"], ["created_at", "2019-08-28 20:00:59.079026"], ["updated_at", "2019-08-28 20:00:59.079026"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Reed Lueilwitz"], ["email", "giselle@grimes.name"], ["birthdate", "1958-11-03"], ["created_at", "2019-08-28 20:00:59.080321"], ["updated_at", "2019-08-28 20:00:59.080321"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Amie Prosacco"], ["email", "nancey@bogisich.info"], ["birthdate", "1984-06-10"], ["created_at", "2019-08-28 20:00:59.081598"], ["updated_at", "2019-08-28 20:00:59.081598"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Morgan Collier"], ["email", "tami.lehner@emmerich.biz"], ["birthdate", "1973-06-09"], ["created_at", "2019-08-28 20:00:59.082904"], ["updated_at", "2019-08-28 20:00:59.082904"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lyndon Lakin Jr."], ["email", "lupe@gusikowski.co"], ["birthdate", "1977-04-06"], ["created_at", "2019-08-28 20:00:59.084205"], ["updated_at", "2019-08-28 20:00:59.084205"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Petra Weissnat DDS"], ["email", "charlene@hills.org"], ["birthdate", "1995-04-13"], ["created_at", "2019-08-28 20:00:59.085511"], ["updated_at", "2019-08-28 20:00:59.085511"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Parker Nienow"], ["email", "jarod_metz@ko.info"], ["birthdate", "1972-02-04"], ["created_at", "2019-08-28 20:00:59.086816"], ["updated_at", "2019-08-28 20:00:59.086816"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sam Mitchell"], ["email", "polly_cole@schmitt.com"], ["birthdate", "1994-01-04"], ["created_at", "2019-08-28 20:00:59.088182"], ["updated_at", "2019-08-28 20:00:59.088182"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kent Moen"], ["email", "thomasena@tromp.co"], ["birthdate", "1972-11-13"], ["created_at", "2019-08-28 20:00:59.089475"], ["updated_at", "2019-08-28 20:00:59.089475"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Deangelo Rohan"], ["email", "shanna_monahan@graham.io"], ["birthdate", "1984-10-23"], ["created_at", "2019-08-28 20:00:59.090897"], ["updated_at", "2019-08-28 20:00:59.090897"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ellis Crist"], ["email", "antonietta.stanton@daughertyvonrueden.com"], ["birthdate", "1958-04-12"], ["created_at", "2019-08-28 20:00:59.092362"], ["updated_at", "2019-08-28 20:00:59.092362"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Glenn Kuvalis"], ["email", "ginette.collier@pollichledner.io"], ["birthdate", "1980-03-30"], ["created_at", "2019-08-28 20:00:59.093830"], ["updated_at", "2019-08-28 20:00:59.093830"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Waldo Schneider"], ["email", "sidney@lubowitz.com"], ["birthdate", "1989-05-17"], ["created_at", "2019-08-28 20:00:59.095287"], ["updated_at", "2019-08-28 20:00:59.095287"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr. Solomon VonRueden"], ["email", "marlys@blick.com"], ["birthdate", "2000-02-14"], ["created_at", "2019-08-28 20:00:59.096682"], ["updated_at", "2019-08-28 20:00:59.096682"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Yang Kris V"], ["email", "caroyln_kemmer@bernier.com"], ["birthdate", "1973-12-21"], ["created_at", "2019-08-28 20:00:59.098066"], ["updated_at", "2019-08-28 20:00:59.098066"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bryant Murphy"], ["email", "sherri_schmitt@heaney.com"], ["birthdate", "1990-08-29"], ["created_at", "2019-08-28 20:00:59.099371"], ["updated_at", "2019-08-28 20:00:59.099371"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Louie Breitenberg"], ["email", "hortencia_ferry@larkin.name"], ["birthdate", "1986-08-14"], ["created_at", "2019-08-28 20:00:59.100659"], ["updated_at", "2019-08-28 20:00:59.100659"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Randy Reinger"], ["email", "vanita.swaniawski@kuhlmansawayn.io"], ["birthdate", "1968-02-19"], ["created_at", "2019-08-28 20:00:59.101933"], ["updated_at", "2019-08-28 20:00:59.101933"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Rueben McDermott"], ["email", "beatrice_maggio@robertsdicki.name"], ["birthdate", "1992-01-27"], ["created_at", "2019-08-28 20:00:59.103217"], ["updated_at", "2019-08-28 20:00:59.103217"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Barry Bode"], ["email", "melani.dooley@rohan.co"], ["birthdate", "1956-05-15"], ["created_at", "2019-08-28 20:00:59.104568"], ["updated_at", "2019-08-28 20:00:59.104568"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kandace Gerhold"], ["email", "collin.schulist@sanford.com"], ["birthdate", "1973-01-17"], ["created_at", "2019-08-28 20:00:59.105869"], ["updated_at", "2019-08-28 20:00:59.105869"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Blair Collier"], ["email", "booker.schultz@lynchreilly.io"], ["birthdate", "1997-07-10"], ["created_at", "2019-08-28 20:00:59.107173"], ["updated_at", "2019-08-28 20:00:59.107173"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Divina Walker"], ["email", "alison@marvin.co"], ["birthdate", "1960-10-06"], ["created_at", "2019-08-28 20:00:59.108456"], ["updated_at", "2019-08-28 20:00:59.108456"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jewell Bernier"], ["email", "jesus.bauch@boyerwisozk.io"], ["birthdate", "1960-02-16"], ["created_at", "2019-08-28 20:00:59.109722"], ["updated_at", "2019-08-28 20:00:59.109722"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alfred Wolf"], ["email", "alaina_becker@purdy.org"], ["birthdate", "1999-07-02"], ["created_at", "2019-08-28 20:00:59.110989"], ["updated_at", "2019-08-28 20:00:59.110989"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Teri Predovic Jr."], ["email", "terrell@rowe.org"], ["birthdate", "1988-09-05"], ["created_at", "2019-08-28 20:00:59.112275"], ["updated_at", "2019-08-28 20:00:59.112275"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Eugene Marks"], ["email", "delbert@wilkinson.net"], ["birthdate", "1984-06-26"], ["created_at", "2019-08-28 20:00:59.113566"], ["updated_at", "2019-08-28 20:00:59.113566"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Wilber Purdy"], ["email", "simon@schoen.com"], ["birthdate", "1975-09-23"], ["created_at", "2019-08-28 20:00:59.114846"], ["updated_at", "2019-08-28 20:00:59.114846"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Leroy Wilkinson"], ["email", "marcellus.hintz@douglaslesch.io"], ["birthdate", "1998-07-25"], ["created_at", "2019-08-28 20:00:59.116159"], ["updated_at", "2019-08-28 20:00:59.116159"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kym Weimann"], ["email", "milagros_wyman@littelbeahan.biz"], ["birthdate", "1998-04-24"], ["created_at", "2019-08-28 20:00:59.117456"], ["updated_at", "2019-08-28 20:00:59.117456"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Johnie Dicki"], ["email", "timika_ortiz@joneskilback.name"], ["birthdate", "1961-04-08"], ["created_at", "2019-08-28 20:00:59.118737"], ["updated_at", "2019-08-28 20:00:59.118737"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Julius Leuschke"], ["email", "rodrigo_macejkovic@rippin.info"], ["birthdate", "1957-01-03"], ["created_at", "2019-08-28 20:00:59.120000"], ["updated_at", "2019-08-28 20:00:59.120000"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Antonio Macejkovic"], ["email", "dacia@koelpin.com"], ["birthdate", "2000-03-14"], ["created_at", "2019-08-28 20:00:59.121398"], ["updated_at", "2019-08-28 20:00:59.121398"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mrs. Neil Feil"], ["email", "marita@windlerdaugherty.io"], ["birthdate", "1971-03-24"], ["created_at", "2019-08-28 20:00:59.122929"], ["updated_at", "2019-08-28 20:00:59.122929"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Miss Lorenza Larkin"], ["email", "julio_keebler@jacobs.net"], ["birthdate", "1970-01-04"], ["created_at", "2019-08-28 20:00:59.124470"], ["updated_at", "2019-08-28 20:00:59.124470"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Thurman Ortiz"], ["email", "karren.okeefe@kirlin.info"], ["birthdate", "1973-06-20"], ["created_at", "2019-08-28 20:00:59.125852"], ["updated_at", "2019-08-28 20:00:59.125852"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Douglas Hudson"], ["email", "morris@goodwin.biz"], ["birthdate", "1987-12-26"], ["created_at", "2019-08-28 20:00:59.127159"], ["updated_at", "2019-08-28 20:00:59.127159"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kent Kemmer Jr."], ["email", "buster@durganbarrows.info"], ["birthdate", "1997-04-19"], ["created_at", "2019-08-28 20:00:59.128582"], ["updated_at", "2019-08-28 20:00:59.128582"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Letisha Altenwerth"], ["email", "madeleine@tillman.com"], ["birthdate", "1957-03-19"], ["created_at", "2019-08-28 20:00:59.129870"], ["updated_at", "2019-08-28 20:00:59.129870"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gilberto Skiles"], ["email", "francis_cruickshank@tillman.name"], ["birthdate", "1974-03-04"], ["created_at", "2019-08-28 20:00:59.131270"], ["updated_at", "2019-08-28 20:00:59.131270"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Albina Gislason"], ["email", "inger_dickens@fadel.name"], ["birthdate", "1990-04-23"], ["created_at", "2019-08-28 20:00:59.132549"], ["updated_at", "2019-08-28 20:00:59.132549"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Justin McKenzie"], ["email", "ciera@hartmannfriesen.co"], ["birthdate", "1966-10-02"], ["created_at", "2019-08-28 20:00:59.133812"], ["updated_at", "2019-08-28 20:00:59.133812"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Miguelina Torphy"], ["email", "carla@flatley.io"], ["birthdate", "1971-02-11"], ["created_at", "2019-08-28 20:00:59.135160"], ["updated_at", "2019-08-28 20:00:59.135160"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Loni Dietrich"], ["email", "joel.kris@larkin.io"], ["birthdate", "1984-05-10"], ["created_at", "2019-08-28 20:00:59.136586"], ["updated_at", "2019-08-28 20:00:59.136586"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bobby Doyle"], ["email", "laverne@boyle.org"], ["birthdate", "1965-05-05"], ["created_at", "2019-08-28 20:00:59.138145"], ["updated_at", "2019-08-28 20:00:59.138145"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sherita Funk"], ["email", "winnifred@little.biz"], ["birthdate", "1975-10-15"], ["created_at", "2019-08-28 20:00:59.139563"], ["updated_at", "2019-08-28 20:00:59.139563"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Raphael Schmidt"], ["email", "clement.buckridge@dickinson.biz"], ["birthdate", "1966-03-30"], ["created_at", "2019-08-28 20:00:59.140877"], ["updated_at", "2019-08-28 20:00:59.140877"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nanette Muller"], ["email", "stuart@swaniawski.net"], ["birthdate", "1975-12-05"], ["created_at", "2019-08-28 20:00:59.142167"], ["updated_at", "2019-08-28 20:00:59.142167"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Oretha Nitzsche"], ["email", "earlie@kubcorwin.com"], ["birthdate", "1997-06-14"], ["created_at", "2019-08-28 20:00:59.143445"], ["updated_at", "2019-08-28 20:00:59.143445"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kym Flatley PhD"], ["email", "jimmy@hane.co"], ["birthdate", "1976-04-18"], ["created_at", "2019-08-28 20:00:59.144724"], ["updated_at", "2019-08-28 20:00:59.144724"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Carman Stroman"], ["email", "mitsuko_raynor@balistreri.com"], ["birthdate", "1960-04-02"], ["created_at", "2019-08-28 20:00:59.146095"], ["updated_at", "2019-08-28 20:00:59.146095"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jed Farrell"], ["email", "rodrick@bradtke.io"], ["birthdate", "1977-07-09"], ["created_at", "2019-08-28 20:00:59.147447"], ["updated_at", "2019-08-28 20:00:59.147447"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ms. Jeannette McKenzie"], ["email", "zachary.swift@zieme.com"], ["birthdate", "1977-07-16"], ["created_at", "2019-08-28 20:00:59.148793"], ["updated_at", "2019-08-28 20:00:59.148793"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ty Sauer"], ["email", "eddie@blick.biz"], ["birthdate", "1956-11-18"], ["created_at", "2019-08-28 20:00:59.150584"], ["updated_at", "2019-08-28 20:00:59.150584"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hoa Schaden I"], ["email", "jorge@stehrbechtelar.biz"], ["birthdate", "1995-09-28"], ["created_at", "2019-08-28 20:00:59.151929"], ["updated_at", "2019-08-28 20:00:59.151929"], ["kind_id", 1]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dale Block"], ["email", "miquel@mohrritchie.net"], ["birthdate", "1981-07-05"], ["created_at", "2019-08-28 20:00:59.153258"], ["updated_at", "2019-08-28 20:00:59.153258"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mr. Oliver Conn"], ["email", "patti@lubowitz.co"], ["birthdate", "1996-12-16"], ["created_at", "2019-08-28 20:00:59.154744"], ["updated_at", "2019-08-28 20:00:59.154744"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Monserrate Bernier"], ["email", "winston.buckridge@douglasweber.io"], ["birthdate", "1977-06-04"], ["created_at", "2019-08-28 20:00:59.156130"], ["updated_at", "2019-08-28 20:00:59.156130"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Milo Schumm III"], ["email", "nelson.weimann@jast.org"], ["birthdate", "1958-02-04"], ["created_at", "2019-08-28 20:00:59.157472"], ["updated_at", "2019-08-28 20:00:59.157472"], ["kind_id", 3]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ lib/tasks/dev.rake:24
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ lib/tasks/dev.rake:20
+  [1m[36mContact Create (0.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lovella Stanton"], ["email", "les@robertsnicolas.io"], ["birthdate", "2001-05-03"], ["created_at", "2019-08-28 20:00:59.158828"], ["updated_at", "2019-08-28 20:00:59.158828"], ["kind_id", 2]]
+  ↳ lib/tasks/dev.rake:20
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ lib/tasks/dev.rake:20
+Started GET "/contacts" for ::1 at 2019-08-28 17:01:53 -0300
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#index as */*
+  [1m[36mContact Load (2.1ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:8
+Completed 200 OK in 76ms (Views: 56.7ms | ActiveRecord: 14.1ms)
+
+
