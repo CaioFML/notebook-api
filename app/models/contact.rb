@@ -3,8 +3,15 @@ class Contact < ApplicationRecord
     "Caio"
   end
 
+  def kind_description
+    self.kind.description
+  end
+
   def as_json(options={})
-    super(methods: :author, root: true)
+    super(
+      root: true,
+      methods: [:kind_description, :author]
+    )
   end
 
   belongs_to :kind
