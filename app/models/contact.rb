@@ -1,4 +1,7 @@
 class Contact < ApplicationRecord
+  has_many :phones
+  belongs_to :kind # optional: true
+
   def to_br
     {
       name: self.name,
@@ -22,5 +25,4 @@ class Contact < ApplicationRecord
   #   )
   # end
 
-  belongs_to :kind # optional: true
 end
