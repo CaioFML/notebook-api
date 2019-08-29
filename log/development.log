@@ -22185,3 +22185,114 @@ Processing by ContactsController#show as */*
 Completed 200 OK in 117ms (Views: 81.1ms | ActiveRecord: 16.5ms)
 
 
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:40:19 -0300
+  [1m[35m (16.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (undefined method `before_filter' for ApplicationController:Class
+Did you mean?  before_action):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/contacts_controller.rb:1:in `<main>'
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:40:35 -0300
+Processing by ContactsController#show as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJuliana Bittencourt", "address_attributes"=>{"id"=>103, "_destroy"=>1}}, "id"=>"6"}
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:40:45 -0300
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (0.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 6]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] No serializer found for resource: #<Phone id: 10, number: "(63) 98866-2473", contact_id: 6, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (70.82ms)
+Completed 200 OK in 112ms (Views: 92.6ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:40:56 -0300
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"6"}
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:47:45 -0300
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"6"}
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 7ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:48:45 -0300
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 6]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] No serializer found for resource: #<Phone id: 10, number: "(63) 98866-2473", contact_id: 6, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (72.14ms)
+Completed 200 OK in 125ms (Views: 80.9ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:48:56 -0300
+Processing by ContactsController#show as 
+  Parameters: {"id"=>"6"}
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:48:59 -0300
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 6]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] No serializer found for resource: #<Phone id: 10, number: "(63) 98866-2473", contact_id: 6, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (3.8ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:49:40 -0300
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"6"}
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:53:56 -0300
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (2.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (0.7ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 6]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] No serializer found for resource: #<Phone id: 10, number: "(63) 98866-2473", contact_id: 6, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (174.83ms)
+Completed 200 OK in 211ms (Views: 139.8ms | ActiveRecord: 49.9ms)
+
+
