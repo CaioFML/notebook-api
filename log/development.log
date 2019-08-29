@@ -19325,3 +19325,152 @@ FOREIGN KEY ("contact_id")
   ↳ lib/tasks/dev.rake:47
   [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 100], ["LIMIT", 1]]
+  [1m[36mKind Load (0.4ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Isis Nogueira Filho"], ["email", "librada@windler.io"], ["birthdate", "1976-05-29"], ["created_at", "2019-08-29 13:20:27.538057"], ["updated_at", "2019-08-29 13:20:27.538057"], ["kind_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 101], ["LIMIT", 1]]
+  [1m[36mPhone Load (1.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 101]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (2.0ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "city", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["street", "29109 Rodovia Rodrigo"], ["city", "Pereiras"], ["contact_id", 101], ["created_at", "2019-08-29 13:21:02.787696"], ["updated_at", "2019-08-29 13:21:02.787696"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/contacts" for ::1 at 2019-08-29 10:29:43 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#create as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJulianaaaaa Bittencourt", "email"=>"teste@ruel.info", "birthdate"=>"12/02/1966", "kind_id"=>3, "phones_attributes"=>[{"number"=>"1-1123-12515"}], "address_attributes"=>{"street"=>"xxx521 Alemda Carvalho", "city"=>"xxxxGrande Sílvia"}}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.8ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "xxxxxJulianaaaaa Bittencourt"], ["email", "teste@ruel.info"], ["birthdate", "1966-02-12"], ["created_at", "2019-08-29 13:29:43.554993"], ["updated_at", "2019-08-29 13:29:43.554993"], ["kind_id", 3]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mPhone Create (0.6ms)[0m  [1m[32mINSERT INTO "phones" ("number", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["number", "1-1123-12515"], ["contact_id", 102], ["created_at", "2019-08-29 13:29:43.557997"], ["updated_at", "2019-08-29 13:29:43.557997"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mAddress Create (0.7ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "city", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["street", "xxx521 Alemda Carvalho"], ["city", "xxxxGrande Sílvia"], ["contact_id", 102], ["created_at", "2019-08-29 13:29:43.559488"], ["updated_at", "2019-08-29 13:29:43.559488"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 102]]
+  ↳ app/models/contact.rb:11
+Completed 201 Created in 173ms (Views: 112.0ms | ActiveRecord: 14.7ms)
+
+
+Started PATCH "/contacts/102" for ::1 at 2019-08-29 10:35:01 -0300
+Processing by ContactsController#update as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJuliana Bittencourt", "address_attributes"=>{"street"=>"xxx521 Alemda Carvalhxxxxo", "city"=>"xxxxGrande Sílviaxxxx"}}, "id"=>"102"}
+  [1m[36mContact Load (2.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mAddress Load (2.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 102], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mAddress Update (2.8ms)[0m  [1m[33mUPDATE "addresses" SET "contact_id" = $1, "updated_at" = $2 WHERE "addresses"."id" = $3[0m  [["contact_id", nil], ["updated_at", "2019-08-29 13:35:01.480420"], ["id", 102]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mKind Load (0.6ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mContact Update (3.0ms)[0m  [1m[33mUPDATE "contacts" SET "name" = $1, "updated_at" = $2 WHERE "contacts"."id" = $3[0m  [["name", "xxxxxJuliana Bittencourt"], ["updated_at", "2019-08-29 13:35:01.522457"], ["id", 102]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mAddress Create (2.4ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "city", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["street", "xxx521 Alemda Carvalhxxxxo"], ["city", "xxxxGrande Sílviaxxxx"], ["contact_id", 102], ["created_at", "2019-08-29 13:35:01.615991"], ["updated_at", "2019-08-29 13:35:01.615991"]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 102]]
+  ↳ app/models/contact.rb:11
+Completed 200 OK in 249ms (Views: 13.8ms | ActiveRecord: 46.0ms)
+
+
+Started PATCH "/contacts/102" for ::1 at 2019-08-29 10:35:21 -0300
+Error occurred while parsing request parameters.
+Contents:
+
+{"contact":	
+	{
+	    "name": "xxxxxJuliana Bittencourt",
+	    "address_attributes": {
+	    	"id": 103
+	    	"street": "xxxo",
+	    	"city": "xxxxGrande Sílviaxxxx"
+	    }
+	}
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{"contact":	
+	{
+	    "name": "xxxxxJuliana Bittencourt",
+	    "address_attributes": {
+	    	"id": 103
+	    	"street": "xxxo",
+	    	"city": "xxxxGrande Sílviaxxxx"
+	    }
+	}
+}'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/contacts/102" for ::1 at 2019-08-29 10:36:07 -0300
+Processing by ContactsController#update as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJuliana Bittencourt", "address_attributes"=>{"id"=>103, "street"=>"xxxxo", "city"=>"xxxxGrande Sílviaxxxx"}}, "id"=>"102"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 102], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mKind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mAddress Update (0.3ms)[0m  [1m[33mUPDATE "addresses" SET "street" = $1, "updated_at" = $2 WHERE "addresses"."id" = $3[0m  [["street", "xxxxo"], ["updated_at", "2019-08-29 13:36:07.181393"], ["id", 103]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 102]]
+  ↳ app/models/contact.rb:11
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 1.3ms)
+
+
