@@ -2,7 +2,7 @@ class Contact < ApplicationRecord
   has_many :phones
   has_one :address
 
-  belongs_to :kind # optional: true
+  belongs_to :kind, optional: true
 
   accepts_nested_attributes_for :phones, allow_destroy: true
   accepts_nested_attributes_for :address, update_only: true

@@ -22328,3 +22328,355 @@ Processing by ContactsController#show as JSON
 Completed 200 OK in 284ms (Views: 112.9ms | ActiveRecord: 62.7ms)
 
 
+Started POST "/contacts/" for ::1 at 2019-08-29 16:15:12 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.18ms)
+Completed 422 Unprocessable Entity in 357ms (Views: 14.0ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 16:16:15 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 16:41:55 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.1ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 16:42:46 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (36.2ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:42:46.436649"], ["updated_at", "2019-08-29 19:42:46.436649"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (12.15ms)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 50.3ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:43:29 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:43:29.415756"], ["updated_at", "2019-08-29 19:43:29.415756"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (0.65ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:46:15 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:46:15.283799"], ["updated_at", "2019-08-29 19:46:15.283799"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (9.29ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 4.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:47:14 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:47:14.858370"], ["updated_at", "2019-08-29 19:47:14.858370"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (5.26ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.4ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:47:44 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#create as JSON
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.9ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:47:44.858852"], ["updated_at", "2019-08-29 19:47:44.858852"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (54.04ms)
+Completed 500 Internal Server Error in 254ms (ActiveRecord: 5.4ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:47:46 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:47:46.289650"], ["updated_at", "2019-08-29 19:47:46.289650"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (1.07ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:49:13 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:49:13.307467"], ["updated_at", "2019-08-29 19:49:13.307467"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (0.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:52:33 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.9ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:52:33.901261"], ["updated_at", "2019-08-29 19:52:33.901261"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (1.73ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:53:03 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.8ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:53:03.817624"], ["updated_at", "2019-08-29 19:53:03.817624"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers]   [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 111]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers]   [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 111], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (89.05ms)
+Completed 201 Created in 112ms (Views: 91.6ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 16:53:45 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (2.4ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:53:45.925004"], ["updated_at", "2019-08-29 19:53:45.925004"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (27.29ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 9.9ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:53:53 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (2.8ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:53:53.266663"], ["updated_at", "2019-08-29 19:53:53.266663"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (42.29ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 19.5ms)
+
+
+  
+NoMethodError (undefined method `kinds' for #<Contact:0x00005624fde490f8>
+Did you mean?  kind
+               kind=):
+  
+app/serializers/contact_serializer.rb:5:in `block (2 levels) in <class:ContactSerializer>'
+app/controllers/contacts_controller.rb:22:in `create'
+  [1m[36mKind Load (2.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/contacts/" for ::1 at 2019-08-29 16:55:23 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#create as JSON
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.7ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:55:23.380584"], ["updated_at", "2019-08-29 19:55:23.380584"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers]   [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 114]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers]   [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 114], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (30.16ms)
+Completed 201 Created in 78ms (Views: 43.2ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 16:55:47 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:55:47.037927"], ["updated_at", "2019-08-29 19:55:47.037927"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 115]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers]   [1m[36mAddress Load (1.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 115], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (5.33ms)
+Completed 201 Created in 8ms (Views: 4.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 16:56:04 -0300
+Processing by ContactsController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: contact):
+  
+app/controllers/contacts_controller.rb:50:in `contact_params'
+app/controllers/contacts_controller.rb:19:in `create'
+Started POST "/contacts/" for ::1 at 2019-08-29 16:56:21 -0300
+Processing by ContactsController#create as JSON
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2019-08-29 19:56:21.900995"], ["updated_at", "2019-08-29 19:56:21.900995"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers]   [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 116]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers]   [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 116], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (18.22ms)
+Completed 201 Created in 35ms (Views: 16.4ms | ActiveRecord: 9.2ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 17:01:20 -0300
+Processing by ContactsController#create as JSON
+  Parameters: {"data"=>{"type"=>"contacts", "attributes"=>{"name"=>"Silfdas Barboasdasdassa", "email"=>"caio.klocko@cain.orgaaaa", "birthdate"=>"12/12/2012"}, "relationships"=>{"kind"=>{"data"=>{"id"=>"2", "type"=>"kinds"}}}}, "contact"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Silfdas Barboasdasdassa"], ["email", "caio.klocko@cain.orgaaaa"], ["birthdate", "2012-12-12"], ["created_at", "2019-08-29 20:01:20.191373"], ["updated_at", "2019-08-29 20:01:20.191373"], ["kind_id", 2]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers]   [1m[36mPhone Load (2.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 117]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers]   [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 117], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (19.61ms)
+Completed 201 Created in 29ms (Views: 15.0ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 17:01:48 -0300
+Processing by ContactsController#create as JSON
+  Parameters: {"data"=>{"type"=>"contacts", "attributes"=>{"name"=>"Silfdas Barboasdasdassa", "email"=>"caio.klocko@cain.orgaaaa", "birthdate"=>"12/12/2012"}, "relationships"=>{"kind"=>{"data"=>{"id"=>"2", "type"=>"kinds"}}}}, "contact"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Silfdas Barboasdasdassa"], ["email", "caio.klocko@cain.orgaaaa"], ["birthdate", "2012-12-12"], ["created_at", "2019-08-29 20:01:48.301038"], ["updated_at", "2019-08-29 20:01:48.301038"], ["kind_id", 2]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 118]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 118], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (1.61ms)
+Completed 201 Created in 4ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 17:01:51 -0300
+Processing by ContactsController#create as JSON
+  Parameters: {"data"=>{"type"=>"contacts", "attributes"=>{"name"=>"Silfdas Barboasdasdassa", "email"=>"caio.klocko@cain.orgaaaa", "birthdate"=>"12/12/2012"}, "relationships"=>{"kind"=>{"data"=>{"id"=>"2", "type"=>"kinds"}}}}, "contact"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Silfdas Barboasdasdassa"], ["email", "caio.klocko@cain.orgaaaa"], ["birthdate", "2012-12-12"], ["created_at", "2019-08-29 20:01:52.003332"], ["updated_at", "2019-08-29 20:01:52.003332"], ["kind_id", 2]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers]   [1m[36mPhone Load (0.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 119]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers]   [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 119], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (4.12ms)
+Completed 201 Created in 7ms (Views: 4.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/contacts/" for ::1 at 2019-08-29 17:02:03 -0300
+Processing by ContactsController#create as JSON
+  Parameters: {"data"=>{"type"=>"contacts", "attributes"=>{"name"=>"Silfdas Barboasdasdassa", "email"=>"caio.klocko@cain.orgaaaa", "birthdate"=>"12/12/2012"}, "relationships"=>{"kind"=>{"data"=>{"id"=>"2", "type"=>"kinds"}}}}, "contact"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Silfdas Barboasdasdassa"], ["email", "caio.klocko@cain.orgaaaa"], ["birthdate", "2012-12-12"], ["created_at", "2019-08-29 20:02:03.841672"], ["updated_at", "2019-08-29 20:02:03.841672"], ["kind_id", 2]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+[active_model_serializers]   [1m[36mKind Load (1.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers]   [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 120]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers]   [1m[36mAddress Load (1.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 120], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:22
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (52.22ms)
+Completed 201 Created in 61ms (Views: 38.3ms | ActiveRecord: 20.1ms)
+
+
