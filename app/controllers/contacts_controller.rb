@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
   # GET /contacts/1
   def show
     # root: true, status: :no_content (manda outro status.code), only: [:name, :email] e expect: [:email]
-    render json: @contact, include: %i[kind phones address]
+    render json: @contact, include: [:kind]
   end
 
   # POST /contacts
@@ -19,7 +19,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      render json: @contact, include: %i[kind phones address], status: :created, location: @contact
+      render json: @contact, status: :created, location: @contact
     else
       render json: @contact.errors, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1
   def update
     if @contact.update(contact_params)
-      render json: @contact, include: %i[kind phones address]
+      render json: @contact
     else
       render json: @contact.errors, status: :unprocessable_entity
     end

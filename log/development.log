@@ -21295,3 +21295,729 @@ Processing by KindsController#index as */*
 Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 5.1ms)
 
 
+Started GET "/contacts" for ::1 at 2019-08-29 14:48:56 -0300
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/home/dev/notebook-api/app/controllers/contacts_controller.rb:14: syntax error, unexpected [, expecting do or '{' or '('
+...ender json: @contact, include [:kind]
+...                              ^):
+  
+app/controllers/contacts_controller.rb:14: syntax error, unexpected [, expecting do or '{' or '('
+Started GET "/contacts" for ::1 at 2019-08-29 14:49:09 -0300
+Processing by ContactsController#index as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJuliana Bittencourt", "address_attributes"=>{"id"=>103, "_destroy"=>1}}}
+  [1m[36mContact Load (2.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mKind Load (1.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (3.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 2]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 1, number: "(37) 96284-6979", contact_id: 2, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mKind Load (1.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 3]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 4, number: "(51) 92974-3994", contact_id: 3, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (3.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 4]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 8, number: "(66) 91371-0148", contact_id: 4, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (3.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 5]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (2.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 6]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 10, number: "(63) 98866-2473", contact_id: 6, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 7]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 8]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 14, number: "(19) 94047-6813", contact_id: 8, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mKind Load (0.8ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 9]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 15, number: "(34) 99096-7620", contact_id: 9, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (3.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 10]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 18, number: "(53) 90334-5818", contact_id: 10, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (6.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 11]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 19, number: "(66) 95766-6343", contact_id: 11, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 12]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 22, number: "(34) 94587-5496", contact_id: 12, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 13]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 14]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 25, number: "(92) 97851-5324", contact_id: 14, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 14], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 15]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 26, number: "(79) 94023-8786", contact_id: 15, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 15], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 16]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 27, number: "(83) 93309-7265", contact_id: 16, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 16], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 17]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 31, number: "(12) 98008-4773", contact_id: 17, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 17], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 18]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 34, number: "(15) 90232-0100", contact_id: 18, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 18], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 19]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 36, number: "(27) 92345-4606", contact_id: 19, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 19], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 20]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 40, number: "(18) 97995-2211", contact_id: 20, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 20], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 21]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 44, number: "(53) 97434-3571", contact_id: 21, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 21], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 22]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 48, number: "(28) 93973-4028", contact_id: 22, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 23]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 51, number: "(83) 97166-4510", contact_id: 23, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 23], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.7ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 24]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 24], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 25]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 54, number: "(85) 99975-1090", contact_id: 25, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 25], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 26]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 58, number: "(62) 97425-3720", contact_id: 26, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 26], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 27]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 59, number: "(32) 95078-2142", contact_id: 27, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 27], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 28]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 61, number: "(16) 99729-9687", contact_id: 28, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 28], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 29]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 65, number: "(79) 96052-8290", contact_id: 29, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 29], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 30]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 30], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 31]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 67, number: "(89) 97732-2429", contact_id: 31, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 31], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 32]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 71, number: "(67) 91710-1577", contact_id: 32, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 32], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 33]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 33], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 34]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 75, number: "(33) 96268-3557", contact_id: 34, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 34], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 35]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 76, number: "(12) 96809-2022", contact_id: 35, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 35], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.7ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 36]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 79, number: "(68) 95798-7280", contact_id: 36, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 36], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 37]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 37], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 38]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 38], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 39]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 82, number: "(55) 96022-6360", contact_id: 39, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 39], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 40]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 85, number: "(65) 90227-0182", contact_id: 40, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 40], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 41]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 86, number: "(81) 98946-3539", contact_id: 41, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 41], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (4.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 42]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 89, number: "(82) 95169-4523", contact_id: 42, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 42], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 43]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 90, number: "(42) 91162-5210", contact_id: 43, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (3.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 43], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 44]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 93, number: "(93) 90377-5139", contact_id: 44, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 44], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 45]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 95, number: "(86) 99465-6894", contact_id: 45, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 45], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 46]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 98, number: "(24) 96929-3700", contact_id: 46, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 46], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 47]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 99, number: "(17) 95518-0611", contact_id: 47, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 47], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 48]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 103, number: "(16) 99314-4013", contact_id: 48, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 48], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 49]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 49], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 50]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 50], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 51]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 106, number: "(37) 97567-9079", contact_id: 51, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 51], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 52]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 108, number: "(94) 99467-9069", contact_id: 52, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 52], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 53]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 53], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 54]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 111, number: "(79) 99840-1566", contact_id: 54, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 54], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 55]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 112, number: "(32) 98167-5776", contact_id: 55, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 55], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 56]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 115, number: "(92) 93985-5061", contact_id: 56, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 56], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 57]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 57], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.7ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 58]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 118, number: "(45) 90168-8386", contact_id: 58, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 58], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 59]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 119, number: "(63) 90862-5490", contact_id: 59, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 59], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 60]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 121, number: "(61) 97184-6188", contact_id: 60, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 60], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 61]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 122, number: "(13) 97080-2367", contact_id: 61, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 61], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 62]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 124, number: "(99) 95478-0528", contact_id: 62, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 62], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 63]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 127, number: "(48) 90530-8309", contact_id: 63, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 63], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 64]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 130, number: "(66) 92233-0999", contact_id: 64, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 64], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 65]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 132, number: "(92) 92967-0401", contact_id: 65, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 65], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 66]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 66], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 67]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 136, number: "(97) 92467-9013", contact_id: 67, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 67], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.7ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 68]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 137, number: "(77) 96354-3238", contact_id: 68, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 68], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 69]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 138, number: "(12) 92579-0445", contact_id: 69, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 69], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 70]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 142, number: "(64) 98752-2096", contact_id: 70, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 70], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 71]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 143, number: "(12) 94586-2462", contact_id: 71, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 72]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 147, number: "(54) 95087-8949", contact_id: 72, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 72], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 73]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 149, number: "(38) 91609-5405", contact_id: 73, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 73], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 74]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 153, number: "(86) 97170-6753", contact_id: 74, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 74], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 75]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 156, number: "(61) 95554-2144", contact_id: 75, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 75], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 76]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 159, number: "(64) 93096-7934", contact_id: 76, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (2.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 76], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 77]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 160, number: "(46) 90765-0325", contact_id: 77, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 77], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.7ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 78]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 78], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 79]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 164, number: "(21) 94915-2105", contact_id: 79, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 79], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 80]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 165, number: "(19) 94655-1667", contact_id: 80, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 80], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (3.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 81]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 167, number: "(53) 92946-2048", contact_id: 81, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 81], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 82]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 171, number: "(41) 91181-1999", contact_id: 82, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 82], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 83]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 174, number: "(61) 97665-4644", contact_id: 83, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 83], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 84]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 84], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 85]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 175, number: "(61) 93349-2360", contact_id: 85, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 85], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 86]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 176, number: "(93) 93822-9848", contact_id: 86, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 86], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 87]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 180, number: "(44) 92240-8609", contact_id: 87, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 87], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 88]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 184, number: "(82) 94590-1976", contact_id: 88, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 88], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 89]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (2.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 89], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 90]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 188, number: "(61) 91369-3522", contact_id: 90, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 90], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 91]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 91], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 92]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 189, number: "(19) 94670-8155", contact_id: 92, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 92], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 93]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 191, number: "(16) 92636-7409", contact_id: 93, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 93], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 94]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 94], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 95]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 193, number: "(22) 90071-1783", contact_id: 95, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 95], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 96]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 194, number: "(13) 96935-2506", contact_id: 96, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 96], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 97]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 197, number: "(79) 90312-4159", contact_id: 97, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 97], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (2.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 98]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 198, number: "(12) 98110-6364", contact_id: 98, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 98], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 99]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (1.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 99], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 100]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 202, number: "(18) 97713-5932", contact_id: 100, created_at: "2019-08-29 13:18:25", updated_at: "2019-08-29 13:18:25">
+[active_model_serializers]   [1m[36mAddress Load (1.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 100], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 101]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 101], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers]   [1m[36mPhone Load (1.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 102]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Phone id: 206, number: "1-1123-12515", contact_id: 102, created_at: "2019-08-29 13:29:43", updated_at: "2019-08-29 13:29:43">
+[active_model_serializers]   [1m[36mAddress Load (2.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 102], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (2569.0ms)
+Completed 200 OK in 2722ms (Views: 2382.7ms | ActiveRecord: 337.4ms)
+
+
+Started GET "/contacts/1" for ::1 at 2019-08-29 14:49:24 -0300
+Processing by ContactsController#show as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJuliana Bittencourt", "address_attributes"=>{"id"=>103, "_destroy"=>1}}, "id"=>"1"}
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (122.49ms)
+Completed 200 OK in 127ms (Views: 122.3ms | ActiveRecord: 1.5ms)
+
+
