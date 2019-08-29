@@ -22021,3 +22021,65 @@ Processing by ContactsController#show as */*
 Completed 200 OK in 127ms (Views: 122.3ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/contacts/1" for ::1 at 2019-08-29 15:06:43 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#show as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJuliana Bittencourt", "address_attributes"=>{"id"=>103, "_destroy"=>1}}, "id"=>"1"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (86.0ms)
+Completed 200 OK in 192ms (Views: 155.5ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/contacts/1" for ::1 at 2019-08-29 15:09:34 -0300
+Processing by ContactsController#show as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJuliana Bittencourt", "address_attributes"=>{"id"=>103, "_destroy"=>1}}, "id"=>"1"}
+  [1m[36mContact Load (2.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (1.9ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (2.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (157.64ms)
+Completed 200 OK in 248ms (Views: 132.7ms | ActiveRecord: 54.1ms)
+
+
+Started GET "/contacts/1" for ::1 at 2019-08-29 15:10:23 -0300
+Processing by ContactsController#show as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJuliana Bittencourt", "address_attributes"=>{"id"=>103, "_destroy"=>1}}, "id"=>"1"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (2.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (0.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mAddress Load (2.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (162.04ms)
+Completed 200 OK in 201ms (Views: 132.5ms | ActiveRecord: 48.8ms)
+
+
+Started GET "/contacts/1" for ::1 at 2019-08-29 15:10:35 -0300
+Processing by ContactsController#show as */*
+  Parameters: {"contact"=>{"name"=>"xxxxxJuliana Bittencourt", "address_attributes"=>{"id"=>103, "_destroy"=>1}}, "id"=>"1"}
+  [1m[36mContact Load (1.8ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (0.9ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (2.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mAddress Load (2.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (128.21ms)
+Completed 200 OK in 164ms (Views: 93.4ms | ActiveRecord: 54.6ms)
+
+
