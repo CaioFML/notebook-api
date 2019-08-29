@@ -9810,3 +9810,150 @@ Completed 200 OK in 199ms (Views: 163.6ms | ActiveRecord: 13.4ms)
   [1m[36mContact Load (1.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mContact Load (1.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mPhone Load (0.7ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 105]]
+Started GET "/contacts/3" for ::1 at 2019-08-29 09:42:36 -0300
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#show as */*
+  Parameters: {"name"=>"Shariksa Larson", "email"=>"harry@aufderharmohr.coaa", "birthdate"=>"1961-03-05", "kind_id"=>2, "id"=>"3", "contact"=>{"name"=>"Shariksa Larson", "email"=>"harry@aufderharmohr.coaa", "birthdate"=>"1961-03-05", "kind_id"=>2}}
+  [1m[36mContact Load (1.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+  [1m[36mKind Load (1.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/contact.rb:7
+  [1m[36mPhone Load (2.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 3]]
+  ↳ app/models/contact.rb:7
+Completed 200 OK in 480ms (Views: 377.8ms | ActiveRecord: 44.8ms)
+
+
+Started POST "/contacts" for ::1 at 2019-08-29 09:47:29 -0300
+Processing by ContactsController#create as */*
+  Parameters: {"contact"=>{"name"=>"Julianaaaaa Bittencourt", "email"=>"sunaaag_deckow@ruel.info", "birthdate"=>"12/02/1966", "kind_id"=>3, "phones_attributes"=>[{"number"=>"(37) 1197694-8785"}, {"number"=>"(73) 1198724-1655"}]}}
+Unpermitted parameter: :phones_attributes
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mKind Load (1.3ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (3.8ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Julianaaaaa Bittencourt"], ["email", "sunaaag_deckow@ruel.info"], ["birthdate", "1966-02-12"], ["created_at", "2019-08-29 12:47:29.630481"], ["updated_at", "2019-08-29 12:47:29.630481"], ["kind_id", 3]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mPhone Load (4.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 106]]
+  ↳ app/models/contact.rb:7
+Completed 201 Created in 121ms (Views: 21.8ms | ActiveRecord: 35.4ms)
+
+
+Started POST "/contacts" for ::1 at 2019-08-29 09:48:03 -0300
+Processing by ContactsController#create as */*
+  Parameters: {"contact"=>{"name"=>"Julianaaaaa Bittencourt", "email"=>"sunaaag_deckow@ruel.info", "birthdate"=>"12/02/1966", "kind_id"=>3, "phones_attributes"=>[{"number"=>"(37) 1197694-8785"}, {"number"=>"(73) 1198724-1655"}]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mKind Load (0.8ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mContact Create (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Julianaaaaa Bittencourt"], ["email", "sunaaag_deckow@ruel.info"], ["birthdate", "1966-02-12"], ["created_at", "2019-08-29 12:48:03.918583"], ["updated_at", "2019-08-29 12:48:03.918583"], ["kind_id", 3]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mPhone Create (0.8ms)[0m  [1m[32mINSERT INTO "phones" ("number", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["number", "(37) 1197694-8785"], ["contact_id", 107], ["created_at", "2019-08-29 12:48:03.920428"], ["updated_at", "2019-08-29 12:48:03.920428"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mPhone Create (0.4ms)[0m  [1m[32mINSERT INTO "phones" ("number", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["number", "(73) 1198724-1655"], ["contact_id", 107], ["created_at", "2019-08-29 12:48:03.922341"], ["updated_at", "2019-08-29 12:48:03.922341"]]
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:21
+  [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 107]]
+  ↳ app/models/contact.rb:7
+Completed 201 Created in 45ms (Views: 2.3ms | ActiveRecord: 16.0ms)
+
+
+Started PATCH "/contacts" for ::1 at 2019-08-29 09:59:59 -0300
+  
+ActionController::RoutingError (No route matches [PATCH] "/contacts"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started PATCH "/contacts/107" for ::1 at 2019-08-29 10:01:34 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#update as */*
+  Parameters: {"contact"=>{"name"=>"Julianaaaaa Bittencourt", "email"=>"teste@ruel.info", "birthdate"=>"12/02/1966", "kind_id"=>3, "phones_attributes"=>[{"id"=>193, "_destroy"=>1}]}, "id"=>"107"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 107], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1 AND "phones"."id" = $2[0m  [["contact_id", 107], ["id", 193]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mContact Update (0.5ms)[0m  [1m[33mUPDATE "contacts" SET "email" = $1, "updated_at" = $2 WHERE "contacts"."id" = $3[0m  [["email", "teste@ruel.info"], ["updated_at", "2019-08-29 13:01:35.009833"], ["id", 107]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mPhone Destroy (1.6ms)[0m  [1m[31mDELETE FROM "phones" WHERE "phones"."id" = $1[0m  [["id", 193]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 107]]
+  ↳ app/models/contact.rb:7
+Completed 200 OK in 195ms (Views: 121.0ms | ActiveRecord: 14.6ms)
+
+
+Started PATCH "/contacts/107" for ::1 at 2019-08-29 10:01:45 -0300
+Processing by ContactsController#update as */*
+  Parameters: {"contact"=>{"name"=>"Julianaaaaa Bittencourt", "email"=>"teste@ruel.info", "birthdate"=>"12/02/1966", "kind_id"=>3, "phones_attributes"=>[{"id"=>192, "_destroy"=>1}]}, "id"=>"107"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 107], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mPhone Load (0.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1 AND "phones"."id" = $2[0m  [["contact_id", 107], ["id", 192]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mKind Load (0.4ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mPhone Destroy (2.3ms)[0m  [1m[31mDELETE FROM "phones" WHERE "phones"."id" = $1[0m  [["id", 192]]
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 107]]
+  ↳ app/models/contact.rb:7
+Completed 200 OK in 17ms (Views: 3.8ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/contacts/107" for ::1 at 2019-08-29 10:01:55 -0300
+Processing by ContactsController#destroy as */*
+  Parameters: {"contact"=>{"name"=>"Julianaaaaa Bittencourt", "email"=>"teste@ruel.info", "birthdate"=>"12/02/1966", "kind_id"=>3, "phones_attributes"=>[{"id"=>192, "_destroy"=>1}]}, "id"=>"107"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 107], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:39
+  [1m[36mContact Destroy (0.3ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."id" = $1[0m  [["id", 107]]
+  ↳ app/controllers/contacts_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/contacts_controller.rb:39
+Completed 204 No Content in 2ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/107" for ::1 at 2019-08-29 10:02:06 -0300
+Processing by ContactsController#show as */*
+  Parameters: {"contact"=>{"name"=>"Julianaaaaa Bittencourt", "email"=>"teste@ruel.info", "birthdate"=>"12/02/1966", "kind_id"=>3, "phones_attributes"=>[{"id"=>192, "_destroy"=>1}]}, "id"=>"107"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 107], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Contact with 'id'=107):
+  
+app/controllers/contacts_controller.rb:45:in `set_contact'

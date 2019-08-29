@@ -19,7 +19,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      render json: @contact, status: :created, location: @contact
+      render json: @contact, include: %i[kind phones], status: :created, location: @contact
     else
       render json: @contact.errors, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1
   def update
     if @contact.update(contact_params)
-      render json: @contact
+      render json: @contact, include: %i[kind phones]
     else
       render json: @contact.errors, status: :unprocessable_entity
     end
@@ -47,6 +47,7 @@ class ContactsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def contact_params
-      params.require(:contact).permit(:name, :email, :birthdate, :kind_id)
+      params.require(:contact).permit(:name, :email, :birthdate, :kind_id, phones_attributes: %i[id number _destroy])
+      # Passando um atributo "_destroy" em nested_attributes você pode destruir ele a partir de outro model, no caso do contact destruindo um phone
     end
 end
