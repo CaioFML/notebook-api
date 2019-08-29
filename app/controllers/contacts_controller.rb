@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
   # GET /contacts/1
   def show
     # root: true, status: :no_content (manda outro status.code), only: [:name, :email] e expect: [:email]
-    render json: @contact, include: :kind
+    render json: @contact, include: %i[kind phones]
   end
 
   # POST /contacts

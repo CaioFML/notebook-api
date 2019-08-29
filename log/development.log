@@ -9776,3 +9776,37 @@ Processing by ContactsController#show as */*
 Completed 200 OK in 20ms (Views: 5.2ms | ActiveRecord: 6.9ms)
 
 
+Started GET "/contacts/3" for ::1 at 2019-08-29 09:28:08 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#show as */*
+  Parameters: {"name"=>"Shariksa Larson", "email"=>"harry@aufderharmohr.coaa", "birthdate"=>"1961-03-05", "kind_id"=>2, "id"=>"3", "contact"=>{"name"=>"Shariksa Larson", "email"=>"harry@aufderharmohr.coaa", "birthdate"=>"1961-03-05", "kind_id"=>2}}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+  [1m[36mKind Load (0.4ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/contact.rb:6
+  [1m[36mPhone Load (0.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 3]]
+  ↳ app/models/contact.rb:6
+Completed 200 OK in 199ms (Views: 163.6ms | ActiveRecord: 13.4ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mKind Load (0.7ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mContact Create (1.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Caio"], ["email", "teste@teste"], ["birthdate", "0012-12-12"], ["created_at", "2019-08-29 12:32:27.281479"], ["updated_at", "2019-08-29 12:32:27.281479"], ["kind_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mKind Load (0.8ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Caio"], ["email", "teste@teste"], ["birthdate", "0012-12-12"], ["created_at", "2019-08-29 12:34:41.699036"], ["updated_at", "2019-08-29 12:34:41.699036"], ["kind_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mContact Create (1.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "birthdate", "created_at", "updated_at", "kind_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Caio"], ["email", "teste@teste"], ["birthdate", "0012-12-12"], ["created_at", "2019-08-29 12:38:36.614364"], ["updated_at", "2019-08-29 12:38:36.614364"], ["kind_id", 2]]
+  [1m[36mPhone Create (2.5ms)[0m  [1m[32mINSERT INTO "phones" ("number", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["number", "1234"], ["contact_id", 105], ["created_at", "2019-08-29 12:38:36.619840"], ["updated_at", "2019-08-29 12:38:36.619840"]]
+  [1m[36mPhone Create (0.5ms)[0m  [1m[32mINSERT INTO "phones" ("number", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["number", "5678"], ["contact_id", 105], ["created_at", "2019-08-29 12:38:36.624735"], ["updated_at", "2019-08-29 12:38:36.624735"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContact Load (1.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mContact Load (1.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPhone Load (0.7ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 105]]
