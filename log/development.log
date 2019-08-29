@@ -23888,3 +23888,76 @@ Processing by KindsController#show as JSON
 Completed 200 OK in 158ms (Views: 31.0ms | ActiveRecord: 16.2ms)
 
 
+Started GET "/rails/info/routes" for ::1 at 2019-08-29 17:36:12 -0300
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (10.7ms)
+  Rendered /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2019-08-29 17:36:12 -0300
+Processing by Rails::InfoController#routes as */*
+  Rendering /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (3.9ms)
+  Rendered /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/2/phones" for ::1 at 2019-08-29 17:39:26 -0300
+Processing by PhonesController#show as JSON
+  Parameters: {"contact_id"=>"2", "phone"=>{}}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/phones_controller.rb:12
+  [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 2]]
+  ↳ app/controllers/phones_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (1.38ms)
+Completed 200 OK in 82ms (Views: 21.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/contacts/1/phones" for ::1 at 2019-08-29 17:39:43 -0300
+Processing by PhonesController#show as JSON
+  Parameters: {"contact_id"=>"1", "phone"=>{}}
+  [1m[36mContact Load (1.7ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/phones_controller.rb:12
+  [1m[36mPhone Load (2.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+  ↳ app/controllers/phones_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.91ms)
+Completed 200 OK in 12ms (Views: 5.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/contacts/4/phones" for ::1 at 2019-08-29 17:39:47 -0300
+Processing by PhonesController#show as JSON
+  Parameters: {"contact_id"=>"4", "phone"=>{}}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/phones_controller.rb:12
+  [1m[36mPhone Load (2.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 4]]
+  ↳ app/controllers/phones_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (1.19ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/contacts/4/relationships/phones" for ::1 at 2019-08-29 17:40:05 -0300
+Processing by PhonesController#show as JSON
+  Parameters: {"contact_id"=>"4", "phone"=>{}}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/phones_controller.rb:12
+  [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 4]]
+  ↳ app/controllers/phones_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.45ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/4/relationships/phones" for ::1 at 2019-08-29 17:40:46 -0300
+Processing by PhonesController#show as JSON
+  Parameters: {"contact_id"=>"4", "phone"=>{}}
+  [1m[36mContact Load (2.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/phones_controller.rb:11
+  [1m[36mPhone Load (4.7ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 4]]
+  ↳ app/controllers/phones_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (4.67ms)
+Completed 200 OK in 89ms (Views: 38.2ms | ActiveRecord: 20.8ms)
+
+
