@@ -22296,3 +22296,35 @@ Processing by ContactsController#show as JSON
 Completed 200 OK in 211ms (Views: 139.8ms | ActiveRecord: 49.9ms)
 
 
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:56:57 -0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mContact Load (2.7ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (0.4ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (1.8ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 6]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (168.78ms)
+Completed 200 OK in 312ms (Views: 197.9ms | ActiveRecord: 37.6ms)
+
+
+Started GET "/contacts/6" for ::1 at 2019-08-29 15:57:35 -0300
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (2.4ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (1.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 6]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mAddress Load (3.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (154.81ms)
+Completed 200 OK in 284ms (Views: 112.9ms | ActiveRecord: 62.7ms)
+
+
