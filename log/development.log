@@ -24225,3 +24225,196 @@ Processing by ContactsController#show as JSON
 Completed 200 OK in 120ms (Views: 92.0ms | ActiveRecord: 22.1ms)
 
 
+Started GET "/contacts/100" for ::1 at 2019-08-30 09:40:40 -0300
+  [1m[35m (43.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"100", "contact"=>{}}
+  [1m[36mContact Load (2.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mKind Load (1.7ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mPhone Load (4.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 100]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mAddress Load (2.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 100], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (254.47ms)
+Completed 200 OK in 424ms (Views: 315.0ms | ActiveRecord: 103.5ms)
+
+
+Started GET "/contacts/100/address" for ::1 at 2019-08-30 09:40:51 -0300
+Processing by AddressesController#show as JSON
+  Parameters: {"contact_id"=>"100", "address"=>{}}
+  [1m[36mContact Load (3.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:21
+  [1m[36mAddress Load (3.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+[active_model_serializers] Rendered AddressSerializer with ActiveModelSerializers::Adapter::JsonApi (1.09ms)
+Completed 200 OK in 20ms (Views: 3.3ms | ActiveRecord: 6.4ms)
+
+
+Started PATCH "/contacts/100/address" for ::1 at 2019-08-30 09:41:16 -0300
+Processing by AddressesController#update as JSON
+  Parameters: {"data"=>{"id"=>"100", "type"=>"addresses", "attributes"=>{"street"=>"MMMMarginal Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "contact_id"=>"100", "address"=>{}}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:21
+  [1m[36mAddress Load (0.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/addresses_controller.rb:11
+  [1m[36mAddress Update (52.5ms)[0m  [1m[33mUPDATE "addresses" SET "street" = $1, "updated_at" = $2 WHERE "addresses"."id" = $3[0m  [["street", "MMMMarginal Cauã Bulhões"], ["updated_at", "2019-08-30 12:41:16.736125"], ["id", 100]]
+  ↳ app/controllers/addresses_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/addresses_controller.rb:11
+[active_model_serializers] Rendered AddressSerializer with ActiveModelSerializers::Adapter::JsonApi (0.34ms)
+Completed 200 OK in 83ms (Views: 0.6ms | ActiveRecord: 53.5ms)
+
+
+Started PATCH "/contacts/108" for ::1 at 2019-08-30 09:42:51 -0300
+Processing by ContactsController#update as JSON
+  Parameters: {"data"=>{"id"=>"100", "type"=>"addresses", "attributes"=>{"street"=>"MMMMarginal Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "id"=>"108", "contact"=>{}}
+  [1m[36mContact Load (3.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/contacts_controller.rb:30
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 19.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'street' for Contact.):
+  
+app/controllers/contacts_controller.rb:30:in `update'
+Started PATCH "/contacts/102" for ::1 at 2019-08-30 09:42:59 -0300
+Processing by ContactsController#update as JSON
+  Parameters: {"data"=>{"id"=>"100", "type"=>"addresses", "attributes"=>{"street"=>"MMMMarginal Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "id"=>"102", "contact"=>{}}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/contacts_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/contacts_controller.rb:30
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'street' for Contact.):
+  
+app/controllers/contacts_controller.rb:30:in `update'
+Started GET "/contacts/108" for ::1 at 2019-08-30 09:43:06 -0300
+Processing by ContactsController#show as JSON
+  Parameters: {"data"=>{"id"=>"100", "type"=>"addresses", "attributes"=>{"street"=>"MMMMarginal Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "id"=>"108", "contact"=>{}}
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:45
+[active_model_serializers]   [1m[36mPhone Load (2.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 108]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers]   [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 108], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/contacts_controller.rb:14
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::JsonApi (57.02ms)
+Completed 200 OK in 63ms (Views: 46.5ms | ActiveRecord: 14.7ms)
+
+
+Started POST "/contacts/108/address" for ::1 at 2019-08-30 09:45:50 -0300
+Processing by AddressesController#create as JSON
+  Parameters: {"data"=>{"type"=>"addresses", "attributes"=>{"street"=>"ABC Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "contact_id"=>"108", "address"=>{}}
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:32
+  [1m[36mAddress Load (1.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:20
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/addresses_controller.rb:20
+  [1m[36mAddress Create (34.5ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "city", "contact_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["street", "ABC Cauã Bulhões"], ["city", "Fortuna de Minas"], ["contact_id", 108], ["created_at", "2019-08-30 12:45:51.046565"], ["updated_at", "2019-08-30 12:45:51.046565"]]
+  ↳ app/controllers/addresses_controller.rb:20
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/addresses_controller.rb:20
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/addresses_controller.rb:22
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/addresses_controller.rb:22
+[active_model_serializers] Rendered AddressSerializer with ActiveModelSerializers::Adapter::JsonApi (2.24ms)
+Completed 201 Created in 143ms (Views: 8.9ms | ActiveRecord: 62.7ms)
+
+
+Started GET "/contacts/108/address" for ::1 at 2019-08-30 09:48:05 -0300
+Processing by AddressesController#show as JSON
+  Parameters: {"data"=>{"type"=>"addresses", "attributes"=>{"street"=>"ABC Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "contact_id"=>"108", "address"=>{}}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:37
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+[active_model_serializers] Rendered AddressSerializer with ActiveModelSerializers::Adapter::JsonApi (0.68ms)
+Completed 200 OK in 30ms (Views: 2.5ms | ActiveRecord: 5.7ms)
+
+
+Started DELETE "/contacts/108/address" for ::1 at 2019-08-30 09:48:18 -0300
+Processing by AddressesController#destroy as JSON
+  Parameters: {"data"=>{"type"=>"addresses", "attributes"=>{"street"=>"ABC Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "contact_id"=>"108", "address"=>{}}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:37
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/addresses_controller.rb:31
+  [1m[36mAddress Destroy (0.3ms)[0m  [1m[31mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 104]]
+  ↳ app/controllers/addresses_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/addresses_controller.rb:31
+Completed 204 No Content in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/contacts/108/address" for ::1 at 2019-08-30 09:48:21 -0300
+Processing by AddressesController#show as JSON
+  Parameters: {"data"=>{"type"=>"addresses", "attributes"=>{"street"=>"ABC Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "contact_id"=>"108", "address"=>{}}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:37
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.42ms)
+Completed 200 OK in 63ms (Views: 59.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/101/address" for ::1 at 2019-08-30 09:49:33 -0300
+Processing by AddressesController#show as JSON
+  Parameters: {"data"=>{"type"=>"addresses", "attributes"=>{"street"=>"ABC Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "contact_id"=>"101", "address"=>{}}
+  [1m[36mContact Load (2.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:37
+  [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 101], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+[active_model_serializers] Rendered AddressSerializer with ActiveModelSerializers::Adapter::JsonApi (13.75ms)
+Completed 200 OK in 84ms (Views: 32.3ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/contacts/100/address" for ::1 at 2019-08-30 09:49:40 -0300
+Processing by AddressesController#show as JSON
+  Parameters: {"data"=>{"type"=>"addresses", "attributes"=>{"street"=>"ABC Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "contact_id"=>"100", "address"=>{}}
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:37
+  [1m[36mAddress Load (2.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+[active_model_serializers] Rendered AddressSerializer with ActiveModelSerializers::Adapter::JsonApi (5.15ms)
+Completed 200 OK in 20ms (Views: 7.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/contacts/100/address" for ::1 at 2019-08-30 09:49:58 -0300
+Processing by AddressesController#show as JSON
+  Parameters: {"data"=>{"type"=>"addresses", "attributes"=>{"street"=>"ABC Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "contact_id"=>"100", "address"=>{}}
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:37
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+[active_model_serializers] Rendered AddressSerializer with ActiveModelSerializers::Adapter::JsonApi (2.74ms)
+Completed 200 OK in 34ms (Views: 7.5ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/contacts/11/address" for ::1 at 2019-08-30 09:50:05 -0300
+Processing by AddressesController#show as JSON
+  Parameters: {"data"=>{"type"=>"addresses", "attributes"=>{"street"=>"ABC Cauã Bulhões", "city"=>"Fortuna de Minas"}}, "contact_id"=>"11", "address"=>{}}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:37
+  [1m[36mAddress Load (0.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+[active_model_serializers] Rendered AddressSerializer with ActiveModelSerializers::Adapter::JsonApi (0.55ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
