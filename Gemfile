@@ -38,6 +38,9 @@ gem 'jwt'
 # token = JWT.encode payload, hmac_secret, 'HS256'
 # decoded_token = JWT.decode token, hmac_scret, true, { :algorithm => 'HS256' }
 
+gem 'devise_token_auth'
+gem 'devise'
+
 # gem 'foreman'
 
 group :development, :test do
