@@ -24898,3 +24898,252 @@ Processing by KindsController#index as JSON
 Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 3.4ms)
 
 
+Started POST "/auths" for ::1 at 2019-08-30 12:40:49 -0300
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AuthsController#create as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "auth"=>{"data"=>{"id"=>"18"}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auths" for ::1 at 2019-08-30 12:41:02 -0300
+Processing by AuthsController#create as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auths" for ::1 at 2019-08-30 12:42:46 -0300
+Processing by AuthsController#create as JSON
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.71ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auths" for ::1 at 2019-08-30 12:49:30 -0300
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AuthsController#create as JSON
+  Parameters: {"nome"=>"Caio", "auth"=>{"nome"=>"Caio"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.73ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auths" for ::1 at 2019-08-30 12:49:51 -0300
+Processing by AuthsController#create as JSON
+  Parameters: {"nome"=>"Caio", "auth"=>{"nome"=>"Caio"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/kinds" for ::1 at 2019-08-30 12:53:03 -0300
+Processing by KindsController#create as JSON
+  Parameters: {"nome"=>"Caio", "kind"=>{}}
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 5.4ms)
+
+
+  
+NameError (undefined local variable or method `hmac_secret' for #<KindsController:0x000055603d735670>):
+  
+app/controllers/kinds_controller.rb:64:in `block in authenticate'
+app/controllers/kinds_controller.rb:63:in `authenticate'
+Started POST "/kinds" for ::1 at 2019-08-30 12:53:44 -0300
+Processing by KindsController#create as JSON
+  Parameters: {"nome"=>"Caio", "kind"=>{}}
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `authenticate_or_request_with_http_token' for #<KindsController:0x000055603c99ce78>):
+  
+app/controllers/kinds_controller.rb:63:in `authenticate'
+Started POST "/auths" for ::1 at 2019-08-30 12:55:04 -0300
+Processing by AuthsController#create as JSON
+  Parameters: {"nome"=>"Caio", "auth"=>{"nome"=>"Caio"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auths" for ::1 at 2019-08-30 12:55:16 -0300
+Processing by AuthsController#create as JSON
+  Parameters: {"nome"=>"Caio", "auth"=>{"nome"=>"Caio"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.43ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/kinds" for ::1 at 2019-08-30 12:55:29 -0300
+Processing by KindsController#create as JSON
+  Parameters: {"nome"=>"Caio", "kind"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 4.1ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/kinds_controller.rb:65:in `block in authenticate'
+app/controllers/kinds_controller.rb:63:in `authenticate'
+Started GET "/kinds" for ::1 at 2019-08-30 12:55:39 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Caio", "kind"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/kinds_controller.rb:65:in `block in authenticate'
+app/controllers/kinds_controller.rb:63:in `authenticate'
+Started GET "/kinds" for ::1 at 2019-08-30 12:55:55 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Caio", "kind"=>{}}
+  [1m[36mKind Load (18.8ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (27.32ms)
+Completed 200 OK in 167ms (Views: 115.8ms | ActiveRecord: 49.3ms)
+
+
+Started POST "/auths" for ::1 at 2019-08-30 12:57:10 -0300
+Processing by AuthsController#create as JSON
+  Parameters: {"nome"=>"Caio", "auth"=>{"nome"=>"Caio"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auths" for ::1 at 2019-08-30 12:57:23 -0300
+Processing by AuthsController#create as JSON
+  Parameters: {"nome"=>"Aaaa", "auth"=>{"nome"=>"Aaaa"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:35 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (2.7ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (1.36ms)
+Completed 200 OK in 32ms (Views: 21.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:40 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (2.4ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (1.51ms)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:40 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.54ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:41 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.4ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (1.17ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:42 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.7ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (2.34ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:48 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (1.03ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:49 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (1.32ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:49 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.4ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.96ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:50 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.2ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (3.99ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:51 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.7ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (3.29ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:51 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.9ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (4.8ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:52 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+  [1m[36mKind Load (0.6ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (5.91ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:53 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::ExpiredSignature (Signature has expired):
+  
+app/controllers/kinds_controller.rb:65:in `block in authenticate'
+app/controllers/kinds_controller.rb:63:in `authenticate'
+Started GET "/kinds" for ::1 at 2019-08-30 12:57:54 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"nome"=>"Aaaa", "kind"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::ExpiredSignature (Signature has expired):
+  
+app/controllers/kinds_controller.rb:65:in `block in authenticate'
+app/controllers/kinds_controller.rb:63:in `authenticate'

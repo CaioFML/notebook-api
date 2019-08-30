@@ -6,7 +6,7 @@ class KindsController < ApplicationController
   # USER = { "caio" => Digest::MD5.hexdigest(["caio","Application","secret"].join(":")) }
 
   include ActionController::HttpAuthentication::Token::ControllerMethods
-  TOKEN = "secret123"
+  # TOKEN = "secret123"
 
   before_action :authenticate
   before_action :set_kind, only: [:show, :update, :destroy]
@@ -61,10 +61,12 @@ class KindsController < ApplicationController
       #   USER[username]
       # end
       authenticate_or_request_with_http_token do |token, options|
-        ActiveSupport::SecurityUtils.secure_compare(
-          ::Digest::SHA256.hexdigest(token),
-          ::Digest::SHA256.hexdigest(TOKEN)
-        )
+        hmac_secret = 'my$ecretK3y'
+        JWT.decode token, hmac_secret, true, { :algorithm => 'HS256' }
+        # ActiveSupport::SecurityUtils.secure_compare(
+        #   ::Digest::SHA256.hexdigest(token),
+        #   ::Digest::SHA256.hexdigest(TOKEN)
+        # )
       end
     end
 

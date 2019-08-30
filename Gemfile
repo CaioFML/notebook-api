@@ -32,6 +32,12 @@ gem 'rails-i18n'
 
 gem 'active_model_serializers'
 
+gem 'jwt'
+# hmac_secret = 'my$ecretK3y'
+# payload = { data: "Caio" }
+# token = JWT.encode payload, hmac_secret, 'HS256'
+# decoded_token = JWT.decode token, hmac_scret, true, { :algorithm => 'HS256' }
+
 # gem 'foreman'
 
 group :development, :test do
