@@ -24683,3 +24683,179 @@ Processing by ContactsController#show as JSON
 Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 2.7ms)
 
 
+Started GET "/kinds" for ::1 at 2019-08-30 10:56:02 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as #<Proc:0x000055e8fd6a3510@/home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/http_authentication.rb:72> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 10:56:17 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+  [1m[36mKind Load (0.7ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (2.14ms)
+Completed 200 OK in 90ms (Views: 86.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:11:06 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:11:30 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:11:30 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:11:32 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:11:32 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:11:54 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:11:54 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:12:06 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:12:06 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:12:26 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:12:26 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:12:31 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:13:41 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:14:08 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:14:28 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:15:25 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:15:39 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:15:46 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:15:59 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:16:12 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:16:30 -0300
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for ::1 at 2019-08-30 11:17:42 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KindsController#index as JSON
+  Parameters: {"data"=>{"id"=>"18"}, "kind"=>{}}
+  [1m[36mKind Load (1.1ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:15
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (4.41ms)
+Completed 200 OK in 56ms (Views: 49.6ms | ActiveRecord: 3.7ms)
+
+
