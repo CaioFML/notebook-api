@@ -42,6 +42,8 @@ gem 'devise_token_auth'
 gem 'devise'
 gem 'devise-i18n'
 
+gem 'versionist'
+
 # gem 'foreman'
 
 group :development, :test do
