@@ -8,3 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
 end
+
+# wBDeruikuYzvmOrB88vssg - Acess-Token Bearer
+# JdH069XeZ5XFwIVItq8n7g - client
+# 1568641565 - expiry
