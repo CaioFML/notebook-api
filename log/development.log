@@ -25180,3 +25180,970 @@ Migrating to DeviseTokenAuthCreateUsers (20190830171321)
   ↳ bin/rails:9
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/rails/info/routes" for ::1 at 2019-08-30 14:26:32 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [56 times] (42.5ms)
+  Rendered /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.5ms)
+  Rendered /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 197ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2019-08-30 14:26:33 -0300
+Started GET "/rails/info/routes" for ::1 at 2019-08-30 14:26:33 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by Rails::InfoController#routes as */*
+  Rendering /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [56 times] (7.0ms)
+  Rendered /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.6ms)
+  Rendered /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=au" for ::1 at 2019-08-30 14:26:34 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"au"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=auth" for ::1 at 2019-08-30 14:26:35 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"auth"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth" for ::1 at 2019-08-30 14:27:28 -0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"email": "teste@teste.com", "password": "123456", "password_confirmation": "123456
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+	"email": "teste@teste.com", "password": "123456", "password_confirmation": "123456
+}'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/auth" for ::1 at 2019-08-30 14:27:42 -0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"email": "teste@teste.com", "password": "123456", "password_confirmation": "123456
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+	"email": "teste@teste.com", "password": "123456", "password_confirmation": "123456
+}'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/auth" for ::1 at 2019-08-30 14:28:16 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as JSON
+  Parameters: {"email"=>"teste@teste.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+Unpermitted parameter: :registration
+Unpermitted parameter: :registration
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@teste.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (27.7ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "teste@teste.com"], ["encrypted_password", "$2a$11$mpSxOe6tZ58OJ2L7YSQjkuhLqUHA3bzjwKqL7NAjUf5ayX3EYQju."], ["email", "teste@teste.com"], ["created_at", "2019-08-30 17:28:17.580185"], ["updated_at", "2019-08-30 17:28:17.580185"]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (3.9ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"LjV5Lxm_a2r9sWC6wWuXMg\\\":{\\\"token\\\":\\\"$2a$10$HdDfweGbZcFAqxnrI1eaHODO2S4U9J4NY9mXmbvpvkY1NL4YDN1tm\\\",\\\"expiry\\\":1568395697}}\""], ["updated_at", "2019-08-30 17:28:17.674160"], ["id", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.3ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"LjV5Lxm_a2r9sWC6wWuXMg\\\":{\\\"token\\\":\\\"$2a$10$XT4KUj4RjKR7r7UIgV4u9u6z5GOX05E8Q/cxTdIAwCkt0zrJ1kAQ.\\\",\\\"expiry\\\":1568395697,\\\"last_token\\\":\\\"$2a$10$HdDfweGbZcFAqxnrI1eaHODO2S4U9J4NY9mXmbvpvkY1NL4YDN1tm\\\",\\\"updated_at\\\":\\\"2019-08-30 17:28:17 UTC\\\"}}\""], ["updated_at", "2019-08-30 17:28:17.753876"], ["id", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 1087ms (Views: 3.9ms | ActiveRecord: 70.0ms)
+
+
+Started POST "/auth/sign_in" for ::1 at 2019-08-30 14:33:18 -0300
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"teste@teste.com", "password"=>"[FILTERED]", "session"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@teste.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"LjV5Lxm_a2r9sWC6wWuXMg\\\":{\\\"token\\\":\\\"$2a$10$XT4KUj4RjKR7r7UIgV4u9u6z5GOX05E8Q/cxTdIAwCkt0zrJ1kAQ.\\\",\\\"expiry\\\":1568395697,\\\"last_token\\\":\\\"$2a$10$HdDfweGbZcFAqxnrI1eaHODO2S4U9J4NY9mXmbvpvkY1NL4YDN1tm\\\",\\\"updated_at\\\":\\\"2019-08-30 17:28:17 UTC\\\"},\\\"19iNQfdV9oVy11gF3zZa-g\\\":{\\\"token\\\":\\\"$2a$10$MtKdoCRuDeG62Y4Hs1yZeecF/1WfepAt14Q16pS6DhFh/X46LNXc2\\\",\\\"expiry\\\":1568395998}}\""], ["updated_at", "2019-08-30 17:33:18.822886"], ["id", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x0000557336892908>):
+  
+activemodel (5.2.3) lib/active_model/attribute_methods.rb:430:in `method_missing'
+devise (4.6.2) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.6.2) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.6.2) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.8) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.8) lib/warden/hooks.rb:10:in `each'
+warden (1.2.8) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.8) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.8) lib/warden/proxy.rb:191:in `set_user'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise_token_auth (1.1.1) app/controllers/devise_token_auth/sessions_controller.rb:32:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=auth" for ::1 at 2019-08-30 14:50:57 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"auth"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/sign_in" for ::1 at 2019-08-30 14:51:18 -0300
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"teste@teste.com", "password"=>"[FILTERED]", "session"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (29.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@teste.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (29.0ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"LjV5Lxm_a2r9sWC6wWuXMg\\\":{\\\"token\\\":\\\"$2a$10$XT4KUj4RjKR7r7UIgV4u9u6z5GOX05E8Q/cxTdIAwCkt0zrJ1kAQ.\\\",\\\"expiry\\\":1568395697,\\\"last_token\\\":\\\"$2a$10$HdDfweGbZcFAqxnrI1eaHODO2S4U9J4NY9mXmbvpvkY1NL4YDN1tm\\\",\\\"updated_at\\\":\\\"2019-08-30 17:28:17 UTC\\\"},\\\"19iNQfdV9oVy11gF3zZa-g\\\":{\\\"token\\\":\\\"$2a$10$MtKdoCRuDeG62Y4Hs1yZeecF/1WfepAt14Q16pS6DhFh/X46LNXc2\\\",\\\"expiry\\\":1568395998},\\\"zIztv_WQlMb5Roza1rVRUg\\\":{\\\"token\\\":\\\"$2a$10$Jfvbc3Cz84DsynCdLzgtwu36B1cnPC.tzHl.1j11OIC8NmGMS7BHS\\\",\\\"expiry\\\":1568397079}}\""], ["updated_at", "2019-08-30 17:51:19.080027"], ["id", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 208ms (ActiveRecord: 58.9ms)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x0000557335cffcd0>):
+  
+activemodel (5.2.3) lib/active_model/attribute_methods.rb:430:in `method_missing'
+devise (4.6.2) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.6.2) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.6.2) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.8) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.8) lib/warden/hooks.rb:10:in `each'
+warden (1.2.8) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.8) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.8) lib/warden/proxy.rb:191:in `set_user'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise_token_auth (1.1.1) app/controllers/devise_token_auth/sessions_controller.rb:32:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/auth/sign_in" for ::1 at 2019-08-30 14:51:32 -0300
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"teste@teste.com", "password"=>"[FILTERED]", "session"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@teste.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"LjV5Lxm_a2r9sWC6wWuXMg\\\":{\\\"token\\\":\\\"$2a$10$XT4KUj4RjKR7r7UIgV4u9u6z5GOX05E8Q/cxTdIAwCkt0zrJ1kAQ.\\\",\\\"expiry\\\":1568395697,\\\"last_token\\\":\\\"$2a$10$HdDfweGbZcFAqxnrI1eaHODO2S4U9J4NY9mXmbvpvkY1NL4YDN1tm\\\",\\\"updated_at\\\":\\\"2019-08-30 17:28:17 UTC\\\"},\\\"19iNQfdV9oVy11gF3zZa-g\\\":{\\\"token\\\":\\\"$2a$10$MtKdoCRuDeG62Y4Hs1yZeecF/1WfepAt14Q16pS6DhFh/X46LNXc2\\\",\\\"expiry\\\":1568395998},\\\"zIztv_WQlMb5Roza1rVRUg\\\":{\\\"token\\\":\\\"$2a$10$Jfvbc3Cz84DsynCdLzgtwu36B1cnPC.tzHl.1j11OIC8NmGMS7BHS\\\",\\\"expiry\\\":1568397079},\\\"cHGlLeVcL8P0U40vsr37Pw\\\":{\\\"token\\\":\\\"$2a$10$wS18x7v2aDzvvXlimrz.O.03XDLaLrIi4RbSkJIAoQHAw9DUPXgEe\\\",\\\"expiry\\\":1568397092}}\""], ["updated_at", "2019-08-30 17:51:32.478719"], ["id", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x00005573363af7b0>):
+  
+activemodel (5.2.3) lib/active_model/attribute_methods.rb:430:in `method_missing'
+devise (4.6.2) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.6.2) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.6.2) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.8) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.8) lib/warden/hooks.rb:10:in `each'
+warden (1.2.8) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.8) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.8) lib/warden/proxy.rb:191:in `set_user'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise_token_auth (1.1.1) app/controllers/devise_token_auth/sessions_controller.rb:32:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/auth/sign_in" for ::1 at 2019-08-30 14:51:34 -0300
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"teste@teste.com", "password"=>"[FILTERED]", "session"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@teste.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"LjV5Lxm_a2r9sWC6wWuXMg\\\":{\\\"token\\\":\\\"$2a$10$XT4KUj4RjKR7r7UIgV4u9u6z5GOX05E8Q/cxTdIAwCkt0zrJ1kAQ.\\\",\\\"expiry\\\":1568395697,\\\"last_token\\\":\\\"$2a$10$HdDfweGbZcFAqxnrI1eaHODO2S4U9J4NY9mXmbvpvkY1NL4YDN1tm\\\",\\\"updated_at\\\":\\\"2019-08-30 17:28:17 UTC\\\"},\\\"19iNQfdV9oVy11gF3zZa-g\\\":{\\\"token\\\":\\\"$2a$10$MtKdoCRuDeG62Y4Hs1yZeecF/1WfepAt14Q16pS6DhFh/X46LNXc2\\\",\\\"expiry\\\":1568395998},\\\"zIztv_WQlMb5Roza1rVRUg\\\":{\\\"token\\\":\\\"$2a$10$Jfvbc3Cz84DsynCdLzgtwu36B1cnPC.tzHl.1j11OIC8NmGMS7BHS\\\",\\\"expiry\\\":1568397079},\\\"cHGlLeVcL8P0U40vsr37Pw\\\":{\\\"token\\\":\\\"$2a$10$wS18x7v2aDzvvXlimrz.O.03XDLaLrIi4RbSkJIAoQHAw9DUPXgEe\\\",\\\"expiry\\\":1568397092},\\\"9jdtSILuSrA_RmPNuEBtFw\\\":{\\\"token\\\":\\\"$2a$10$74vhruZPVNnNjGmSniqiW.jSooR9923VuAynFTCLfKYAStm9pCQrG\\\",\\\"expiry\\\":1568397094}}\""], ["updated_at", "2019-08-30 17:51:34.463626"], ["id", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x00005573368387f0>):
+  
+activemodel (5.2.3) lib/active_model/attribute_methods.rb:430:in `method_missing'
+devise (4.6.2) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.6.2) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.6.2) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.8) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.8) lib/warden/hooks.rb:10:in `each'
+warden (1.2.8) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.8) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.8) lib/warden/proxy.rb:191:in `set_user'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise_token_auth (1.1.1) app/controllers/devise_token_auth/sessions_controller.rb:32:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/auth/sign_in" for ::1 at 2019-09-02 10:42:12 -0300
+  [1m[35m (24.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"teste@teste.com", "password"=>"[FILTERED]", "session"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (70.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@teste.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"LjV5Lxm_a2r9sWC6wWuXMg\\\":{\\\"token\\\":\\\"$2a$10$XT4KUj4RjKR7r7UIgV4u9u6z5GOX05E8Q/cxTdIAwCkt0zrJ1kAQ.\\\",\\\"expiry\\\":1568395697,\\\"last_token\\\":\\\"$2a$10$HdDfweGbZcFAqxnrI1eaHODO2S4U9J4NY9mXmbvpvkY1NL4YDN1tm\\\",\\\"updated_at\\\":\\\"2019-08-30 17:28:17 UTC\\\"},\\\"19iNQfdV9oVy11gF3zZa-g\\\":{\\\"token\\\":\\\"$2a$10$MtKdoCRuDeG62Y4Hs1yZeecF/1WfepAt14Q16pS6DhFh/X46LNXc2\\\",\\\"expiry\\\":1568395998},\\\"zIztv_WQlMb5Roza1rVRUg\\\":{\\\"token\\\":\\\"$2a$10$Jfvbc3Cz84DsynCdLzgtwu36B1cnPC.tzHl.1j11OIC8NmGMS7BHS\\\",\\\"expiry\\\":1568397079},\\\"cHGlLeVcL8P0U40vsr37Pw\\\":{\\\"token\\\":\\\"$2a$10$wS18x7v2aDzvvXlimrz.O.03XDLaLrIi4RbSkJIAoQHAw9DUPXgEe\\\",\\\"expiry\\\":1568397092},\\\"9jdtSILuSrA_RmPNuEBtFw\\\":{\\\"token\\\":\\\"$2a$10$74vhruZPVNnNjGmSniqiW.jSooR9923VuAynFTCLfKYAStm9pCQrG\\\",\\\"expiry\\\":1568397094},\\\"3djImXg-3jLjPbnGgxyQbw\\\":{\\\"token\\\":\\\"$2a$10$2niI/4dnC/a.79KZreg4XO9tBm0gpSJBP4fU3VnO4YjsaNWs/6BZq\\\",\\\"expiry\\\":1568641334}}\""], ["updated_at", "2019-09-02 13:42:14.027004"], ["id", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 108.3ms)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x0000559b7330f0e8>):
+  
+activemodel (5.2.3) lib/active_model/attribute_methods.rb:430:in `method_missing'
+devise (4.6.2) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.6.2) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.6.2) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.8) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.8) lib/warden/hooks.rb:10:in `each'
+warden (1.2.8) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.8) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.8) lib/warden/proxy.rb:191:in `set_user'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise_token_auth (1.1.1) app/controllers/devise_token_auth/sessions_controller.rb:32:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/auth/sign_in" for ::1 at 2019-09-02 10:43:09 -0300
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"teste@teste.com", "password"=>"[FILTERED]", "session"=>{"email"=>"teste@teste.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@teste.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"LjV5Lxm_a2r9sWC6wWuXMg\\\":{\\\"token\\\":\\\"$2a$10$XT4KUj4RjKR7r7UIgV4u9u6z5GOX05E8Q/cxTdIAwCkt0zrJ1kAQ.\\\",\\\"expiry\\\":1568395697,\\\"last_token\\\":\\\"$2a$10$HdDfweGbZcFAqxnrI1eaHODO2S4U9J4NY9mXmbvpvkY1NL4YDN1tm\\\",\\\"updated_at\\\":\\\"2019-08-30 17:28:17 UTC\\\"},\\\"19iNQfdV9oVy11gF3zZa-g\\\":{\\\"token\\\":\\\"$2a$10$MtKdoCRuDeG62Y4Hs1yZeecF/1WfepAt14Q16pS6DhFh/X46LNXc2\\\",\\\"expiry\\\":1568395998},\\\"zIztv_WQlMb5Roza1rVRUg\\\":{\\\"token\\\":\\\"$2a$10$Jfvbc3Cz84DsynCdLzgtwu36B1cnPC.tzHl.1j11OIC8NmGMS7BHS\\\",\\\"expiry\\\":1568397079},\\\"cHGlLeVcL8P0U40vsr37Pw\\\":{\\\"token\\\":\\\"$2a$10$wS18x7v2aDzvvXlimrz.O.03XDLaLrIi4RbSkJIAoQHAw9DUPXgEe\\\",\\\"expiry\\\":1568397092},\\\"9jdtSILuSrA_RmPNuEBtFw\\\":{\\\"token\\\":\\\"$2a$10$74vhruZPVNnNjGmSniqiW.jSooR9923VuAynFTCLfKYAStm9pCQrG\\\",\\\"expiry\\\":1568397094},\\\"3djImXg-3jLjPbnGgxyQbw\\\":{\\\"token\\\":\\\"$2a$10$2niI/4dnC/a.79KZreg4XO9tBm0gpSJBP4fU3VnO4YjsaNWs/6BZq\\\",\\\"expiry\\\":1568641334},\\\"Qs20i1mFnh0ay7DaZviwIw\\\":{\\\"token\\\":\\\"$2a$10$AnD8amZCz/uG.RPoHhBAnOVhlEfghpOBWcuedty0Jo1pM9fNC8FRK\\\",\\\"expiry\\\":1568641389}}\""], ["updated_at", "2019-09-02 13:43:09.870078"], ["id", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x0000559b73b3d9b8>):
+  
+activemodel (5.2.3) lib/active_model/attribute_methods.rb:430:in `method_missing'
+devise (4.6.2) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.6.2) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.6.2) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.8) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.8) lib/warden/hooks.rb:10:in `each'
+warden (1.2.8) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.8) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.8) lib/warden/proxy.rb:191:in `set_user'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise_token_auth (1.1.1) app/controllers/devise_token_auth/sessions_controller.rb:32:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/auth" for ::1 at 2019-09-02 10:43:36 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as JSON
+  Parameters: {"email"=>"teste@com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"teste@com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+Unpermitted parameter: :registration
+Unpermitted parameter: :registration
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 422 Unprocessable Entity in 343ms (Views: 10.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/auth" for ::1 at 2019-09-02 10:43:48 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as JSON
+  Parameters: {"email"=>"teste@com.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"teste@com.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+Unpermitted parameter: :registration
+Unpermitted parameter: :registration
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@com.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (33.8ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "teste@com.com"], ["encrypted_password", "$2a$11$pIcyF/VTUFGCs8c7qkKuP.GhN2xAdmJHL23w9Wy3JR/JikyDo228i"], ["email", "teste@com.com"], ["created_at", "2019-09-02 13:43:48.159162"], ["updated_at", "2019-09-02 13:43:48.159162"]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"n-rlkKN3JR-qDSUnrONxCQ\\\":{\\\"token\\\":\\\"$2a$10$kmbh16NFRPbA07DEiSNoFuuWKPjpPy9eEVjM5o34zR2EEZPnGOEZG\\\",\\\"expiry\\\":1568641428}}\""], ["updated_at", "2019-09-02 13:43:48.256228"], ["id", 2]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"n-rlkKN3JR-qDSUnrONxCQ\\\":{\\\"token\\\":\\\"$2a$10$uBEWyvoFWYZ9K08oPo.kteu08UnUgcfmt8zuSajanAyx.cqA9HS4S\\\",\\\"expiry\\\":1568641428,\\\"last_token\\\":\\\"$2a$10$kmbh16NFRPbA07DEiSNoFuuWKPjpPy9eEVjM5o34zR2EEZPnGOEZG\\\",\\\"updated_at\\\":\\\"2019-09-02 13:43:48 UTC\\\"}}\""], ["updated_at", "2019-09-02 13:43:48.307321"], ["id", 2]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 247ms (Views: 0.4ms | ActiveRecord: 39.4ms)
+
+
+Started POST "/auth/sign_in" for ::1 at 2019-09-02 10:44:13 -0300
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"teste@com.com", "password"=>"[FILTERED]", "session"=>{"email"=>"teste@com.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@com.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"n-rlkKN3JR-qDSUnrONxCQ\\\":{\\\"token\\\":\\\"$2a$10$uBEWyvoFWYZ9K08oPo.kteu08UnUgcfmt8zuSajanAyx.cqA9HS4S\\\",\\\"expiry\\\":1568641428,\\\"last_token\\\":\\\"$2a$10$kmbh16NFRPbA07DEiSNoFuuWKPjpPy9eEVjM5o34zR2EEZPnGOEZG\\\",\\\"updated_at\\\":\\\"2019-09-02 13:43:48 UTC\\\"},\\\"682knFfbcNL6RiFpTIrCAg\\\":{\\\"token\\\":\\\"$2a$10$7sA/RcJtkH.NWeoeZsAFSOCbAaYvbLElipOFcAPOvaW2uMOTZ0SQm\\\",\\\"expiry\\\":1568641453}}\""], ["updated_at", "2019-09-02 13:44:13.706137"], ["id", 2]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 3.6ms)
+
+
+  
+NoMethodError (undefined method `current_sign_in_at' for #<User:0x0000559b72a275c0>):
+  
+activemodel (5.2.3) lib/active_model/attribute_methods.rb:430:in `method_missing'
+devise (4.6.2) lib/devise/models/trackable.rb:21:in `update_tracked_fields'
+devise (4.6.2) lib/devise/models/trackable.rb:39:in `update_tracked_fields!'
+devise (4.6.2) lib/devise/hooks/trackable.rb:9:in `block in <main>'
+warden (1.2.8) lib/warden/hooks.rb:15:in `block in _run_callbacks'
+warden (1.2.8) lib/warden/hooks.rb:10:in `each'
+warden (1.2.8) lib/warden/hooks.rb:10:in `_run_callbacks'
+warden (1.2.8) lib/warden/manager.rb:52:in `_run_callbacks'
+warden (1.2.8) lib/warden/proxy.rb:191:in `set_user'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise_token_auth (1.1.1) app/controllers/devise_token_auth/sessions_controller.rb:32:in `create'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/auth/sign_in" for ::1 at 2019-09-02 10:46:05 -0300
+Processing by DeviseTokenAuth::SessionsController#create as JSON
+  Parameters: {"email"=>"teste@com.com", "password"=>"[FILTERED]", "session"=>{"email"=>"teste@com.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "teste@com.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"n-rlkKN3JR-qDSUnrONxCQ\\\":{\\\"token\\\":\\\"$2a$10$uBEWyvoFWYZ9K08oPo.kteu08UnUgcfmt8zuSajanAyx.cqA9HS4S\\\",\\\"expiry\\\":1568641428,\\\"last_token\\\":\\\"$2a$10$kmbh16NFRPbA07DEiSNoFuuWKPjpPy9eEVjM5o34zR2EEZPnGOEZG\\\",\\\"updated_at\\\":\\\"2019-09-02 13:43:48 UTC\\\"},\\\"682knFfbcNL6RiFpTIrCAg\\\":{\\\"token\\\":\\\"$2a$10$7sA/RcJtkH.NWeoeZsAFSOCbAaYvbLElipOFcAPOvaW2uMOTZ0SQm\\\",\\\"expiry\\\":1568641453},\\\"JdH069XeZ5XFwIVItq8n7g\\\":{\\\"token\\\":\\\"$2a$10$MhLSoURbuTN9TPeU8oJ6y.pfAijpw0KocoBmjA9nVf1dJ2TRy38oi\\\",\\\"expiry\\\":1568641565}}\""], ["updated_at", "2019-09-02 13:46:05.689966"], ["id", 2]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"n-rlkKN3JR-qDSUnrONxCQ\\\":{\\\"token\\\":\\\"$2a$10$uBEWyvoFWYZ9K08oPo.kteu08UnUgcfmt8zuSajanAyx.cqA9HS4S\\\",\\\"expiry\\\":1568641428,\\\"last_token\\\":\\\"$2a$10$kmbh16NFRPbA07DEiSNoFuuWKPjpPy9eEVjM5o34zR2EEZPnGOEZG\\\",\\\"updated_at\\\":\\\"2019-09-02 13:43:48 UTC\\\"},\\\"682knFfbcNL6RiFpTIrCAg\\\":{\\\"token\\\":\\\"$2a$10$7sA/RcJtkH.NWeoeZsAFSOCbAaYvbLElipOFcAPOvaW2uMOTZ0SQm\\\",\\\"expiry\\\":1568641453},\\\"JdH069XeZ5XFwIVItq8n7g\\\":{\\\"token\\\":\\\"$2a$10$OWScRBGU9t21ufgYXmbR3.3CxPbZJo9kWDyiJ01xut7gDCMDARCoq\\\",\\\"expiry\\\":1568641565,\\\"last_token\\\":\\\"$2a$10$MhLSoURbuTN9TPeU8oJ6y.pfAijpw0KocoBmjA9nVf1dJ2TRy38oi\\\",\\\"updated_at\\\":\\\"2019-09-02 13:46:05 UTC\\\"}}\""], ["updated_at", "2019-09-02 13:46:05.742984"], ["id", 2]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 203ms (Views: 3.4ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/kinds" for ::1 at 2019-09-02 10:54:55 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KindsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "teste@com.com"], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mKind Load (25.2ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  ↳ app/controllers/kinds_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (18.78ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[37mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"n-rlkKN3JR-qDSUnrONxCQ\\\":{\\\"token\\\":\\\"$2a$10$uBEWyvoFWYZ9K08oPo.kteu08UnUgcfmt8zuSajanAyx.cqA9HS4S\\\",\\\"expiry\\\":1568641428,\\\"last_token\\\":\\\"$2a$10$kmbh16NFRPbA07DEiSNoFuuWKPjpPy9eEVjM5o34zR2EEZPnGOEZG\\\",\\\"updated_at\\\":\\\"2019-09-02 13:43:48 UTC\\\"},\\\"682knFfbcNL6RiFpTIrCAg\\\":{\\\"token\\\":\\\"$2a$10$7sA/RcJtkH.NWeoeZsAFSOCbAaYvbLElipOFcAPOvaW2uMOTZ0SQm\\\",\\\"expiry\\\":1568641453},\\\"JdH069XeZ5XFwIVItq8n7g\\\":{\\\"token\\\":\\\"$2a$10$CrUFr8c8iAb5.kr0yKyd8O.I.SFPF7ap4IRi4CAkb87VNlwLNTjvS\\\",\\\"expiry\\\":1568642095,\\\"last_token\\\":\\\"$2a$10$OWScRBGU9t21ufgYXmbR3.3CxPbZJo9kWDyiJ01xut7gDCMDARCoq\\\",\\\"updated_at\\\":\\\"2019-09-02 13:54:55 UTC\\\"}}\""], ["updated_at", "2019-09-02 13:54:55.918979"], ["id", 2]]
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 303ms (Views: 110.6ms | ActiveRecord: 39.8ms)
+
+

@@ -40,6 +40,7 @@ gem 'jwt'
 
 gem 'devise_token_auth'
 gem 'devise'
+gem 'devise-i18n'
 
 # gem 'foreman'
 
