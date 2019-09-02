@@ -44,6 +44,10 @@ gem 'devise-i18n'
 
 gem 'versionist'
 
+gem 'kaminari'
+
+gem 'api-pagination'
+
 # gem 'foreman'
 
 group :development, :test do
