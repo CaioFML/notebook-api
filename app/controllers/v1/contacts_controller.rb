@@ -19,7 +19,7 @@ module V1
     # GET /contacts/1
     def show
       # root: true, status: :no_content (manda outro status.code), only: [:name, :email] e expect: [:email]
-      render json: @contact, include: %i[kind address phones] #, meta: { author: "Caio" }
+      render json: @contact #, include: %i[kind address phones] #, meta: { author: "Caio" }
     end
 
     # POST /contacts
