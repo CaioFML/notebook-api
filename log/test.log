@@ -1,0 +1,130 @@
+  [1m[35m (162.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "notebook-api_test"[0m
+  [1m[35m (512.4ms)[0m  [1m[35mCREATE DATABASE "notebook-api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (13.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "addresses" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" bigserial primary key, "street" character varying, "city" character varying, "contact_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_addresses_on_contact_id" ON "addresses"  ("contact_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "contacts" CASCADE[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "name" character varying, "email" character varying, "birthdate" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "kind_id" bigint)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_contacts_on_kind_id" ON "contacts"  ("kind_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "kinds" CASCADE[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "kinds" ("id" bigserial primary key, "description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "phones" CASCADE[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "phones" ("id" bigserial primary key, "number" character varying, "contact_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_phones_on_contact_id" ON "phones"  ("contact_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "allow_password_change" boolean DEFAULT FALSE, "remember_created_at" timestamp, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "name" character varying, "nickname" character varying, "image" character varying, "email" character varying, "tokens" json, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_uid_and_provider" ON "users"  ("uid", "provider")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "addresses" ADD CONSTRAINT "fk_rails_67e9674de3"
+FOREIGN KEY ("contact_id")
+  REFERENCES "contacts" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "contacts" ADD CONSTRAINT "fk_rails_c1f4bf4c44"
+FOREIGN KEY ("kind_id")
+  REFERENCES "kinds" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "phones" ADD CONSTRAINT "fk_rails_0c8c68a120"
+FOREIGN KEY ("contact_id")
+  REFERENCES "contacts" ("id")
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190830171321)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190828143547),
+(20190829121108),
+(20190828195305),
+(20190829130341),
+(20190828195257);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-09-02 18:26:43.439351"], ["updated_at", "2019-09-02 18:26:43.439351"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as HTML
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as 
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as JSON
+  [1m[36mContact Load (1.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 3.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as JSON
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (10.04ms)
+Completed 200 OK in 52ms (Views: 39.8ms | ActiveRecord: 5.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as JSON
+  [1m[36mContact Load (1.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.54ms)
+Completed 200 OK in 11ms (Views: 5.3ms | ActiveRecord: 3.1ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as JSON
+  [1m[36mContact Load (1.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (1.07ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as HTML
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as JSON
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.61ms)
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as JSON
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.61ms)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as HTML
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 0ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as JSON
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (2.85ms)
+Completed 200 OK in 25ms (Views: 12.9ms | ActiveRecord: 3.4ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by V1::ContactsController#index as HTML
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
