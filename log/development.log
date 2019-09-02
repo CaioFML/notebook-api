@@ -34437,3 +34437,35 @@ Processing by V1::ContactsController#index as JSON
 Completed 200 OK in 256ms (Views: 220.6ms | ActiveRecord: 36.3ms)
 
 
+Started POST "/v1/contacts" for ::1 at 2019-09-02 14:14:25 -0300
+  
+SyntaxError (/home/dev/notebook-api/app/controllers/v1/contacts_controller.rb:29: syntax error, unexpected '\n', expecting =>
+/home/dev/notebook-api/app/controllers/v1/contacts_controller.rb:68: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/v1/contacts_controller.rb:29: syntax error, unexpected '\n', expecting =>
+app/controllers/v1/contacts_controller.rb:68: syntax error, unexpected end-of-input, expecting end
+Started POST "/v1/contacts" for ::1 at 2019-09-02 14:14:57 -0300
+Processing by V1::ContactsController#create as JSON
+  Parameters: {"contact"=>{}}
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 415 Unsupported Media Type in 1ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/v1/contacts" for ::1 at 2019-09-02 14:14:59 -0300
+Processing by V1::ContactsController#create as JSON
+  Parameters: {"contact"=>{}}
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 415 Unsupported Media Type in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/v1/contacts" for ::1 at 2019-09-02 14:15:10 -0300
+Processing by V1::ContactsController#create as JSON
+  Parameters: {"contact"=>{}}
+  [1m[35m (10.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/contacts_controller.rb:26
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/v1/contacts_controller.rb:26
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 234ms (Views: 22.5ms | ActiveRecord: 19.1ms)
+
+

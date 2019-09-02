@@ -1,5 +1,8 @@
 class Contact < ApplicationRecord
 
+  validates_presence_of :kind
+  validates_presence_of :address
+
   paginates_per 5
 
   has_many :phones
