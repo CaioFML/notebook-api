@@ -34469,3 +34469,140 @@ Processing by V1::ContactsController#create as JSON
 Completed 200 OK in 234ms (Views: 22.5ms | ActiveRecord: 19.1ms)
 
 
+Started GET "/v1/contacts" for ::1 at 2019-09-02 14:26:45 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/caio/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{}}
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (1.1ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (1.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (1.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 2]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (0.9ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mKind Load (2.3ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (2.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 3]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (2.3ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (3.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 4]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (2.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (1.9ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 5]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (2.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[35m (4.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (279.43ms)
+Completed 200 OK in 349ms (Views: 286.7ms | ActiveRecord: 67.5ms)
+
+
+Started GET "/v1/contacts" for ::1 at 2019-09-02 14:27:14 -0300
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{}}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mKind Load (0.3ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (0.4ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (1.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 2]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (2.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mKind Load (2.8ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (0.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 3]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (1.6ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 4]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (1.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 5]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (160.13ms)
+Completed 200 OK in 165ms (Views: 150.6ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/v1/contacts" for ::1 at 2019-09-02 14:27:15 -0300
+Processing by V1::ContactsController#index as JSON
+  Parameters: {"contact"=>{}}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mKind Load (2.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (0.5ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (1.2ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 2]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (1.2ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mKind Load (2.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (1.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 3]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (2.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (2.0ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 4]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (1.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mCACHE Kind Load (0.1ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mPhone Load (2.3ms)[0m  [1m[34mSELECT "phones".* FROM "phones" WHERE "phones"."contact_id" = $1[0m  [["contact_id", 5]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[36mAddress Load (4.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = $1 LIMIT $2[0m  [["contact_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers]   [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "contacts"[0m
+[active_model_serializers]   ↳ app/controllers/v1/contacts_controller.rb:13
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (193.56ms)
+Completed 200 OK in 203ms (Views: 174.2ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/v1/contacts" for ::1 at 2019-09-02 14:27:49 -0300
+Processing by V1::ContactsController#index as HTML
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/contacts" for ::1 at 2019-09-02 14:27:49 -0300
+Processing by V1::ContactsController#index as */*
+Filter chain halted as :ensure_json_request rendered or redirected
+Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+

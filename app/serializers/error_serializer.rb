@@ -9,7 +9,7 @@ module ErrorSerializer
         { id: k, tittle: msg }
       end
     end.flatten
-    
+
     json[:errors] = new_hash
     json
   end
